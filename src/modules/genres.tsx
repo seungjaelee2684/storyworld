@@ -1,0 +1,21 @@
+export const genreList = [
+  { id: 1, color: '#4B0082', genre: '판타지' },
+  { id: 2, color: '#4682B4', genre: 'SF' },
+  { id: 3, color: '#FF69B4', genre: '로맨스' },
+  { id: 4, color: '#2F4F4F', genre: '스릴러' },
+  { id: 5, color: '#4B0082', genre: '미스터리' },
+  { id: 6, color: '#2F4F4F', genre: '추리' },
+  { id: 7, color: '#8B4513', genre: '역사' },
+  { id: 8, color: '#8B0000', genre: '공포' },
+  { id: 9, color: '#6A5ACD', genre: '드라마' },
+  { id: 10, color: '#228B22', genre: '모험' },
+  { id: 11, color: '#FFA07A', genre: '학원' },
+  { id: 12, color: '#FFD700', genre: '코미디' },
+  { id: 13, color: '#00BFFF', genre: '스포츠' },
+  { id: 14, color: '#800000', genre: '성인' },
+  { id: 15, color: '#708090', genre: '철학' },
+  { id: 16, color: '#191970', genre: '정치' },
+  { id: 17, color: '#FFD700', genre: '종교' },
+  { id: 18, color: '#FF6347', genre: '요리' },
+  { id: 19, color: '#A9A9A9', genre: '기타' }
+];
