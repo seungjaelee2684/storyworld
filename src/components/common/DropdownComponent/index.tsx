@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { DropdownButton, DropdownMenu, DropdownMenuButton } from './style';
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
-interface DropdownProps {
+interface DropdownComponentProps {
     fullWidth?: boolean | undefined;
     size?: string;
     state: string;
@@ -11,14 +11,14 @@ interface DropdownProps {
     style?: React.CSSProperties;
 };
 
-const Dropdown = ({
+const DropdownComponent = ({
     fullWidth,
     size = 'medium',
     state,
     action,
     options,
     style
-}: DropdownProps) => {
+}: DropdownComponentProps) => {
 
     const dropdownRef = useRef<HTMLButtonElement>(null);
     const [open, setOpen] = useState<boolean>(false);
@@ -68,4 +68,4 @@ const Dropdown = ({
     )
 };
 
-export default Dropdown;
+export default DropdownComponent;

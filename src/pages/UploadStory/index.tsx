@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { UploadContainer } from './style';
-import Dropdown from '../../components/common/Dropdown';
+import DropdownComponent from '../../components/common/DropdownComponent';
 import { genreList } from '../../modules/genres';
 
 const UploadStory = () => {
@@ -11,7 +11,7 @@ const UploadStory = () => {
 
   return (
     <UploadContainer>
-      <Dropdown
+      <DropdownComponent
         state={dropdownValue}
         action={setDropdownValue}
         options={optionList} />
