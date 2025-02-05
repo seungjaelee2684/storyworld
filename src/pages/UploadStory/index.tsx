@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { UploadContainer } from './style';
-import DropdownComponent from '../../components/common/DropdownComponent';
+import DropdownComponent from '../../components/ui/DropdownComponent';
 import { genreList } from '../../modules/genres';
 
 const UploadStory = () => {
