@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { HeaderInlineContainer, HeaderLayout } from './style';
-import { Button } from '@mui/material';
+import { useRef, useState } from 'react'
+import { HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, NavButton, NavigateWrapper } from './style';
+import ButtonComponent from '../../ui/ButtonComponent';
 
 const Header = () => {
 
@@ -10,6 +10,23 @@ const Header = () => {
   return (
     <HeaderLayout ref={headerRef}>
       <HeaderInlineContainer>
+        <HeaderLogo>
+          STORY WORLD
+        </HeaderLogo>
+        <HeaderRightWrapper>
+          <NavigateWrapper>
+            <NavButton href='/story'>
+              Story
+            </NavButton>
+            <NavButton href='/character'>
+              Character
+            </NavButton>
+          </NavigateWrapper>
+          <ButtonComponent
+            label='Sign Up'
+            href='/signup'
+            size='medium' />
+        </HeaderRightWrapper>
       </HeaderInlineContainer>
     </HeaderLayout>
   )

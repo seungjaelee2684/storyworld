@@ -3,9 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
 import MainLayout from './components/common/MainLayout';
 import MainPage from './pages/MainPage';
-import MyStoryPage from './pages/MyStoryPage';
-import StoryListPage from './pages/StoryListPage';
 import UploadStory from './pages/UploadStory';
+import Header from './components/common/Header';
 
 const theme = createTheme({
   typography: {
@@ -29,12 +28,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <main className='App'>
         <BrowserRouter>
+        <Header />
           <Routes>
             <Route element={<MainLayout />}>
               <Route path='/' element={<MainPage />} />
-              <Route path='/mystory' element={<MyStoryPage />} />
-              <Route path='/story/:storysId' element={<StoryListPage />} />
-              <Route path='/upload/story' element={<UploadStory />} />
+              <Route path='/story/upload' element={<UploadStory />} />
             </Route>
           </Routes>
         </BrowserRouter>
