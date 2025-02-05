@@ -3,18 +3,27 @@ import { ButtonStyle, ButtonLinkStyle } from './style';
 interface ButtonComponentProps {
   size?: string;
   btnType?: string;
-  color?: string;
   href?: string;
+  type?: "button" | "reset" | "submit" | undefined;
   label: string;
+  fullWidth?: boolean;
+  onClick?: (e: any) => void;
 };
 
 const ButtonComponent = ({
   size = "medium",
   btnType = "fill",
-  color = "#197fe6",
   href,
-  label
+  type,
+  label,
+  fullWidth = false,
+  onClick,
 }: ButtonComponentProps) => {
+
+  const buttonClickHandler = (e: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
 
   const buttonType = () => {
     if (href) {
@@ -23,7 +32,9 @@ const ButtonComponent = ({
           $size={size}
           $btntype={btnType}
           href={href}
-          $color={color}>
+          type={type}
+          $full={fullWidth}
+          onClick={onClick}>
           {label}
         </ButtonLinkStyle>
       )
@@ -32,7 +43,9 @@ const ButtonComponent = ({
         <ButtonStyle
           $size={size}
           $btntype={btnType}
-          $color={color}>
+          type={type}
+          $full={fullWidth}
+          onClick={onClick}>
           {label}
         </ButtonStyle>
       )

@@ -1,4 +1,5 @@
 import styled, { css, RuleSet } from "styled-components";
+import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
 
 const width: { [key: string]: string } = {
     small: `200px;`,
@@ -53,15 +54,13 @@ export const DropdownButton = styled.button<{
     align-items: center;
     background-color: transparent;
     transition: all 0.2s;
-    font-weight: 500;
-    border: ${(props) => props.$open ? '2px solid #d3d3d3' : '2px solid #818181'};
-    background-color: #424040;
-    color: #ffffff;
+    color: ${light_blue_heavy};
+    border: ${(props) => props.$open ? `1px solid ${light_blue_heavy}` : `1px solid ${light_blue}`};
     font-family: "Pretendard";
     cursor: pointer;
 
     &:hover {
-        border: 2px solid #d3d3d3;
+        border: 1px solid ${light_blue_heavy};
     }
 `;
 
@@ -71,8 +70,8 @@ export const DropdownMenu = styled.ul<{
     width: 100%;
     height: fit-content;
     max-height: 400px;
-    background-color: #424040ca;
-    box-shadow: 0px 0px 8px 0px #33333380;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 0px ${light_blue_heavy}80;
     position: absolute;
     ${(props) => topSize[props.$size]};
     left: 0;
@@ -84,7 +83,7 @@ export const DropdownMenu = styled.ul<{
     justify-content: start;
     align-items: start;
     border-radius: 8px;
-    border: 1px solid #818181;
+    border: 1px solid ${light_blue_heavy};
     padding: 8px;
     box-sizing: border-box;
 `;
@@ -98,12 +97,12 @@ export const DropdownMenuButton = styled.li<{
     display: flex;
     justify-content: start;
     align-items: center;
-    color: #ffffff;
     transition: all 0.2s;
     border-radius: 4px;
     font-family: "Pretendard";
+    box-sizing: border-box;
 
     &:hover {
-        background-color: #6b6767;
+        background-color: ${light_blue};
     }
 `;

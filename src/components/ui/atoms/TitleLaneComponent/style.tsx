@@ -1,5 +1,5 @@
 import styled, { css, CSSProp } from "styled-components";
-import { light_blue_heavy } from "../../../styles/color_pallete";
+import { light_blue_heavy } from "../../../../styles/color_pallete";
 
 const size: { [key: string]: CSSProp } = {
     small: css`
@@ -19,12 +19,12 @@ export const ListTopLane = styled.div`
   justify-content: space-between;
   align-items: end;
   padding: 0px 16px;
+  user-select: none;
 `;
 
 export const ListTitle = styled.div<{ $size: string }>`
   ${(props) => size[props.$size]};
   font-weight: 700;
-  user-select: none;
 `;
 
 export const MoreButton = styled.a`
