@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
-import { HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, NavButton, NavigateWrapper } from './style';
-import ButtonComponent from '../../ui/ButtonComponent';
+import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, NavButton, NavigateWrapper } from './style';
+import ButtonComponent from '../../ui/atoms/ButtonComponent';
 
 const Header = () => {
 
@@ -22,10 +22,15 @@ const Header = () => {
               Character
             </NavButton>
           </NavigateWrapper>
-          <ButtonComponent
-            label='Sign Up'
-            href='/signup'
-            size='medium' />
+          <ButtonWrapper>
+            <ButtonComponent
+              label='Login'
+              href='/login'
+              btnType='text' />
+            <ButtonComponent
+              label='Sign Up'
+              href='/signup' />
+          </ButtonWrapper>
         </HeaderRightWrapper>
       </HeaderInlineContainer>
     </HeaderLayout>

@@ -16,4 +16,4 @@ const Template: StoryFn<typeof CreateButton> = (args: any) => (
 export const Default = Template.bind({});
 Default.args = {
     fullWidth: false,
-}; // Small의 props 지정
+}; // Default의 props 지정

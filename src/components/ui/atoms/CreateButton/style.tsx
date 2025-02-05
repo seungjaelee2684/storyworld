@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue, light_blue_heavy } from "../../../styles/color_pallete";
+import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
 
 export const CreateButtonContainer = styled.a<{
     $size: string,
@@ -12,6 +12,13 @@ export const CreateButtonContainer = styled.a<{
     gap: 24px;
     cursor: pointer;
     user-select: none;
+    transition: all 0.2s;
+    padding: 20px;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: ${light_blue};
+    }
 `;
 
 export const CreateIconBox = styled.div`
@@ -45,4 +52,10 @@ export const CreateSubTitle = styled.p`
     font-weight: 400;
     color: ${light_blue_heavy};
     text-align: start;
+`;
+
+export const RightArrow = styled.span`
+    min-width: 40px;
+    width: 40px;
+    color: ${light_blue_heavy};
 `;

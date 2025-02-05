@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { MainBanner, MainBannerImage, MainBannerText, MainContainer, StoryListContainer } from './style';
 import { getCookies } from '../../utils/getCookies';
 import BannerImg from '../../assets/images/background.webp';
-import TitleLaneComponent from '../../components/ui/TitleLaneComponent';
-import CreateButton from '../../components/ui/CreateButton';
+import TitleLaneComponent from '../../components/ui/atoms/TitleLaneComponent';
+import CreateButton from '../../components/ui/atoms/CreateButton';
 
 const MainPage = () => {
 
@@ -57,7 +57,8 @@ const MainPage = () => {
           title='Stories'
           more='/story' />
         <CreateButton
-          href='/story/upload' />
+          href='/story/upload'
+          fullWidth />
       </StoryListContainer>
     </MainContainer>
   )
