@@ -23,7 +23,15 @@ const DropdownComponent = ({
     const dropdownRef = useRef<HTMLButtonElement>(null);
     const [open, setOpen] = useState<boolean>(false);
 
-    const handleOpen = (item: string) => {
+    const openFunc = (e: any) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setOpen(!open)
+    };
+
+    const handleOpen = (e: any, item: string) => {
+        e.preventDefault();
+        e.stopPropagation();
         action(item)
         setOpen(false);
     };
@@ -42,10 +50,9 @@ const DropdownComponent = ({
         };
     }, []);
 
-    console.log(fullWidth);
     return (
         <DropdownButton
-            onClick={() => setOpen(!open)}
+            onClick={openFunc}
             $full={fullWidth}
             $size={size}
             $open={open}
@@ -60,7 +67,7 @@ const DropdownComponent = ({
                         <DropdownMenuButton
                             key={index}
                             $size={size}
-                            onClick={() => handleOpen(item)}>
+                            onClick={(e: any) => handleOpen(e, item)}>
                             {item}
                         </DropdownMenuButton>)}
                 </DropdownMenu>}

@@ -25,7 +25,7 @@ const EmptyList = ({
             <EmptySubTitle>
                 당신의 첫번째 {typeList[type].ko}를 추가해보시겠습니까?
             </EmptySubTitle>
-            <ButtonComponent href={href} btnType='term' label={`Add ${typeList[type].en}`} />
+            <ButtonComponent href={href} btnType='term' label={`add ${typeList[type].en}`} />
         </EmptyContainer>
     )
 };

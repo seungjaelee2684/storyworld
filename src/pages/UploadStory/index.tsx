@@ -5,14 +5,25 @@ import { useState } from 'react';
 const UploadStory = () => {
 
   const [upload, setUpload] = useState<any>({
-    storyName: ''
+    storyName: '',
+    description: '',
+    genre: '',
   });
+
+  const changeHandler = (e: any) => {
+    const { name, value } = e.target;
+    setUpload({
+      ...upload,
+      [name]: value
+    });
+  };
 
   return (
     <UploadContainer>
       <UploadForm
         state={upload}
-        action={setUpload} />
+        action={setUpload}
+        onChange={changeHandler} />
     </UploadContainer>
   )
 };

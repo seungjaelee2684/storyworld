@@ -40,7 +40,7 @@ export const DynamicInputContainer = styled.div<{
   $focus: boolean,
 }>`
   ${(props) => size[props.$size]};
-  width: ${(props) => props.$full ? '100%' : '300px'};
+  width: ${(props) => props.$full ? '100%' : '500px'};
   display: flex;
   justify-content: start;
   align-items: center;

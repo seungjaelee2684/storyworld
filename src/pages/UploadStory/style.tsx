@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const UploadContainer = styled.section`
-    width: 1040px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: start;
