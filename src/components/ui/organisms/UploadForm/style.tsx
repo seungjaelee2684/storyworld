@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const UploadContainer = styled.section`
-    width: 1040px;
+export const UploadFormContainer = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;

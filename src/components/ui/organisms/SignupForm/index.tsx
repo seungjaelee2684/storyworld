@@ -1,27 +1,31 @@
 import ButtonComponent from "../../atoms/ButtonComponent";
 import DynamicInput from "../../atoms/DynamicInput";
-import { FormSubTitle, FormTitle, FormTitleWrapper, LoginFormContainer } from "./style";
+import { FormSubTitle, FormTitle, FormTitleWrapper } from "../LoginForm/style";
+import { SignupFormContainer } from "./style";
 
-interface LoginFormProps {
+interface SignupFormProps {
 
 };
 
-const LoginForm = ({
+const SignupForm = ({
 
-}: LoginFormProps) => {
+}: SignupFormProps) => {
+
   return (
-    <LoginFormContainer>
+    <SignupFormContainer>
       <FormTitleWrapper>
-        <FormTitle>login</FormTitle>
+        <FormTitle>sign up</FormTitle>
         <FormSubTitle>
           Join Our Story World!
         </FormSubTitle>
       </FormTitleWrapper>
       <DynamicInput fullWidth label='ID or E-mail' size='large' />
       <DynamicInput fullWidth type="password" label='Password' size='large' />
+      <DynamicInput fullWidth type="password" label='Currect Password' size='large' />
+      <DynamicInput fullWidth label='Nickname' size='large' />
       <ButtonComponent label='Login' fullWidth size='large' />
-    </LoginFormContainer>
+    </SignupFormContainer>
   )
 };
 
-export default LoginForm;
+export default SignupForm;

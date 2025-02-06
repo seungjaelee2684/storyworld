@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import LoginForm from "./index";
 
 export default {
-    title: "Components/LoginForm", // story 이름
+    title: "Components/Organisms/LoginForm", // story 이름
     component: LoginForm,
 } as Meta<typeof LoginForm>;
 

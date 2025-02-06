@@ -4,16 +4,18 @@ interface TitleLaneComponenttProps {
     size?: string;
     title: string;
     more?: string;
+    unPadding?: boolean;
 };
 
 const TitleLaneComponent = ({
     size = 'medium',
     title,
-    more
+    more,
+    unPadding = false,
 }: TitleLaneComponenttProps) => {
 
     return (
-        <ListTopLane>
+        <ListTopLane $unpadding={unPadding}>
             <ListTitle
                 $size={size}>
                 {title}

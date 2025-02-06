@@ -13,12 +13,14 @@ const size: { [key: string]: CSSProp } = {
     `,
 };
 
-export const ListTopLane = styled.div`
+export const ListTopLane = styled.div<{
+    $unpadding: boolean
+}>`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: end;
-  padding: 0px 16px;
+  padding: ${(props) => props.$unpadding ? '0px 0px' : '0px 16px'};
   user-select: none;
 `;
 

@@ -1,20 +1,18 @@
-import { useState } from 'react'
 import { UploadContainer } from './style';
-import DropdownComponent from '../../components/ui/atoms/DropdownComponent';
-import { genreList } from '../../modules/genres';
+import UploadForm from '../../components/ui/organisms/UploadForm';
+import { useState } from 'react';
 
 const UploadStory = () => {
 
-  const optionList = genreList.map((item: any) => item.genre);
-  console.log("🚀 ~ UploadStory ~ optionList:", optionList)
-  const [dropdownValue, setDropdownValue] = useState<string>('');
+  const [upload, setUpload] = useState<any>({
+    storyName: ''
+  });
 
   return (
     <UploadContainer>
-      <DropdownComponent
-        state={dropdownValue}
-        action={setDropdownValue}
-        options={optionList} />
+      <UploadForm
+        state={upload}
+        action={setUpload} />
     </UploadContainer>
   )
 };

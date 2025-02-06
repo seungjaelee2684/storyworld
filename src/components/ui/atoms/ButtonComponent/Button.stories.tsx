@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import ButtonComponent from "./index";
 
 export default {
-    title: "Components/Button", // story 이름
+    title: "Components/Atoms/Button", // story 이름
     component: ButtonComponent,
 } as Meta<typeof ButtonComponent>;
 

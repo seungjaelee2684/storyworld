@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import TitleLaneComponent from "./index";
 
 export default {
-    title: "Components/TitleLane", // story 이름
+    title: "Components/Atoms/TitleLane", // story 이름
     component: TitleLaneComponent,
 } as Meta<typeof TitleLaneComponent>;
 
