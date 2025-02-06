@@ -3,7 +3,7 @@ import InputLane from "./index";
 import Input from "../../atoms/Input";
 
 export default {
-    title: "Components/InputLane", // story 이름
+    title: "Components/Modules/InputLane", // story 이름
     component: InputLane,
     argTypes: {
         children: { control: <Input type="password" /> }

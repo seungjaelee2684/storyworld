@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MainBanner, MainBannerImage, MainBannerText, MainContainer, StoryListContainer } from './style';
 import { getCookies } from '../../utils/getCookies';
-import BannerImg from '../../assets/images/background.webp';
+import BannerImg from '../../assets/images/illust.webp';
 import TitleLaneComponent from '../../components/ui/atoms/TitleLaneComponent';
 import CreateButton from '../../components/ui/atoms/CreateButton';
 
@@ -55,9 +55,9 @@ const MainPage = () => {
       <StoryListContainer>
         <TitleLaneComponent
           title='Stories'
-          more='/story' />
+          more='/stories' />
         <CreateButton
-          href='/story/upload'
+          href='/stories/upload'
           fullWidth />
       </StoryListContainer>
     </MainContainer>

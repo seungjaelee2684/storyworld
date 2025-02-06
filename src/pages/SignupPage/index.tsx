@@ -1,8 +1,11 @@
-
+import SignupForm from "../../components/ui/organisms/SignupForm";
+import { SignupContainer } from "./style";
 
 const SignupPage = () => {
   return (
-    <div>SignupPage</div>
+    <SignupContainer>
+      <SignupForm />
+    </SignupContainer>
   )
 };
 

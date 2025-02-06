@@ -10,16 +10,16 @@ const Header = () => {
   return (
     <HeaderLayout ref={headerRef}>
       <HeaderInlineContainer>
-        <HeaderLogo>
-          STORY WORLD
+        <HeaderLogo href='/'>
+          StoryWorld
         </HeaderLogo>
         <HeaderRightWrapper>
           <NavigateWrapper>
-            <NavButton href='/story'>
-              Story
+            <NavButton href='/stories'>
+              Stories
             </NavButton>
-            <NavButton href='/character'>
-              Character
+            <NavButton href='/characters'>
+              Characters
             </NavButton>
           </NavigateWrapper>
           <ButtonWrapper>

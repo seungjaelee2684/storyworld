@@ -3,7 +3,7 @@ import DropdownComponent from "./index";
 import { useState } from "react";
 
 export default {
-    title: "Components/Dropdown", // story 이름
+    title: "Components/Atoms/Dropdown", // story 이름
     component: DropdownComponent,
     argTypes: {
       fullWidth: { control: "boolean" },

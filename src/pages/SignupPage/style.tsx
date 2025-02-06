@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.section`
+export const SignupContainer = styled.section`
   width: fit-content;
-  height: calc(100dvh - 200px);
+  min-height: calc(100dvh - 200px);
   display: flex;
   flex-direction: column;
   justify-content: center;

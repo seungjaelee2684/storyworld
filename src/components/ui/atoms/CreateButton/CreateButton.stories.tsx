@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import CreateButton from "./index";
 
 export default {
-    title: "Components/CreateButton", // story 이름
+    title: "Components/Atoms/CreateButton", // story 이름
     component: CreateButton,
     argTypes: {
         fullWidth: { control: 'boolean' }
