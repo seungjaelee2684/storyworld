@@ -8,6 +8,7 @@ interface ButtonComponentProps {
   label: string;
   fullWidth?: boolean;
   onClick?: (e: any) => void;
+  style?: React.CSSProperties;
 };
 
 const ButtonComponent = ({
@@ -18,6 +19,7 @@ const ButtonComponent = ({
   label,
   fullWidth = false,
   onClick,
+  style,
 }: ButtonComponentProps) => {
 
   const buttonClickHandler = (e: any) => {
@@ -34,7 +36,8 @@ const ButtonComponent = ({
           href={href}
           type={type}
           $full={fullWidth}
-          onClick={onClick}>
+          onClick={onClick}
+          style={style}>
           {label}
         </ButtonLinkStyle>
       )
@@ -45,7 +48,8 @@ const ButtonComponent = ({
           $btntype={btnType}
           type={type}
           $full={fullWidth}
-          onClick={onClick}>
+          onClick={onClick}
+          style={style}>
           {label}
         </ButtonStyle>
       )

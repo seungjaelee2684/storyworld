@@ -6,7 +6,7 @@ export const StoryListContainer = styled.section`
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 60px;
+    gap: 40px;
 `;
 
 export const ListContainer = styled.ul`

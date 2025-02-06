@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
+import { light_blue, light_blue_heavy, light_blue_strong } from "../../../../styles/color_pallete";
 
 const size: { [key: string]: string } = {
   small: `
@@ -28,7 +28,7 @@ export const InputContainer = styled.div<{
   $focus: boolean,
 }>`
   ${(props) => size[props.$size]};
-  width: ${(props) => props.$full ? '100%' : '300px'};
+  width: ${(props) => props.$full ? '100%' : '500px'};
   display: flex;
   justify-content: start;
   align-items: center;
@@ -48,6 +48,6 @@ export const InputStyle = styled.input`
   box-sizing: border-box;
   
   &::placeholder {
-    color: #e9e9e9;
+    color: ${light_blue_strong};
   }
 `;

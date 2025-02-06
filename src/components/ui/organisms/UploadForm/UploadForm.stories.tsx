@@ -3,13 +3,23 @@ import UploadForm from "./index";
 
 export default {
     title: "Components/Organisms/UploadForm",
-    component: UploadForm
+    component: UploadForm,
+    argTypes: {
+        state: { control: 'object' }
+    }
 } as Meta<typeof UploadForm>;
 
 const Template: StoryFn<typeof UploadForm> = (args: any) => (
     <UploadForm {...args} />
 );
 
-export const Default = Template.bind({
-    
-}); // Default의 props 지정
+export const Default = Template.bind({});
+Default.args = {
+    state: {
+        storyName: '',
+        description: '',
+        genre: '',
+    },
+    action: () => {},
+};
+// Default의 props 지정

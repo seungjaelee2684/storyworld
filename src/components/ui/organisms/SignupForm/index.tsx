@@ -23,7 +23,7 @@ const SignupForm = ({
       <DynamicInput fullWidth type="password" label='Password' size='large' />
       <DynamicInput fullWidth type="password" label='Currect Password' size='large' />
       <DynamicInput fullWidth label='Nickname' size='large' />
-      <ButtonComponent label='Login' fullWidth size='large' />
+      <ButtonComponent label="Let's Join" fullWidth size='large' />
     </SignupFormContainer>
   )
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const UploadFormContainer = styled.div`
+export const UploadFormContainer = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;

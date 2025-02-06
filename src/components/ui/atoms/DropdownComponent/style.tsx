@@ -2,29 +2,29 @@ import styled, { css, RuleSet } from "styled-components";
 import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
 
 const width: { [key: string]: string } = {
-    small: `200px;`,
-    medium: `240px;`,
-    large: `300px;`
+    small: `400px;`,
+    medium: `500px;`,
+    large: `500px;`
 };
 
 const size: { [key: string]: RuleSet } = {
     small: css`
         height: 32px;
         min-height: 32px;
-        padding: 0px 18px;
+        padding: 0px 12px;
         font-size: 14px;
     `,
     medium: css`
         height: 38px;
         min-height: 38px;
-        padding: 0px 20px;
-        font-size: 16px;
+        padding: 0px 14px;
+        font-size: 15px;
     `,
     large: css`
         height: 48px;
         min-height: 48px;
-        padding: 0px 28px;
-        font-size: 18px;
+        padding: 0px 16px;
+        font-size: 16px;
     `
 };
 

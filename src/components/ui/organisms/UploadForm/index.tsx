@@ -6,6 +6,8 @@ import TitleLaneComponent from "../../atoms/TitleLaneComponent";
 import { UploadFormContainer } from "./style";
 import InputLane from "../../modules/InputLane";
 import Input from "../../atoms/Input";
+import Textarea from "../../atoms/Textarea";
+import ButtonComponent from "../../atoms/ButtonComponent";
 
 interface UploadFormProps {
     state: any;
@@ -19,7 +21,8 @@ const UploadForm = ({
     onChange,
 }: UploadFormProps) => {
 
-    const { storyName, genre } = state;
+    const { storyName, description, genre } = state;
+    console.log(state);
 
     const optionList = genreList.map((item: any) => item.genre);
     const [dropdownValue, setDropdownValue] = useState<string>('');
@@ -36,14 +39,33 @@ const UploadForm = ({
             <TitleLaneComponent unPadding title='Basic Information' />
             <InputLane label='Story Name' >
                 <Input
+                    size='large'
                     name='storyName'
                     value={storyName}
-                    onChange={onChange} />
+                    onChange={onChange}
+                    fullWidth />
             </InputLane>
-            <DropdownComponent
-                state={dropdownValue}
-                action={setDropdownValue}
-                options={optionList} />
+            <InputLane label='Description'>
+                <Textarea
+                    size='large'
+                    name='description'
+                    value={description}
+                    onChange={onChange}
+                    fullWidth />
+            </InputLane>
+            <InputLane label='Genre'>
+                <DropdownComponent
+                    size='large'
+                    state={dropdownValue}
+                    action={setDropdownValue}
+                    options={optionList}
+                    fullWidth />
+            </InputLane>
+            <ButtonComponent
+                label='Add Story'
+                size='large'
+                btnType='term'
+                fullWidth />
         </UploadFormContainer>
     )
 };
