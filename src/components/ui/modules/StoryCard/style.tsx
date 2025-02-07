@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue, light_blue_black, light_blue_heavy, primary_light } from "../../../../styles/color_pallete";
+import { light_blue_black, light_blue_heavy, primary_light } from "../../../../styles/color_pallete";
 import { ImageWrapper } from "../../atoms/ImageBox/style";
 
 // const size: { [key: string]: string } = {
@@ -15,7 +15,6 @@ import { ImageWrapper } from "../../atoms/ImageBox/style";
 // };
 
 export const CardContainer = styled.li<{
-  $isstory: boolean,
   $full: boolean,
 }>`
   width: 100%;

@@ -21,7 +21,7 @@ const UploadForm = ({
     onChange,
 }: UploadFormProps) => {
 
-    const { storyName, description, genre } = state;
+    const { storyName, description } = state;
     console.log(state);
 
     const optionList = genreList.map((item: any) => item.genre);

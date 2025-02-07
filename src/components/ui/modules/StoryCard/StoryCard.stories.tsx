@@ -1,16 +1,16 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Card from "./index";
+import StoryCard from "./index";
 
 export default {
-  title: "Components/Modules/Card",
-  component: Card,
+  title: "Components/Modules/StoryCard",
+  component: StoryCard,
   argTypes: {
     fullWidth: { control: 'boolean' }
   }
-} as Meta<typeof Card>;
+} as Meta<typeof StoryCard>;
 
-const Template: StoryFn<typeof Card> = (args: any) => (
-  <Card {...args} />
+const Template: StoryFn<typeof StoryCard> = (args: any) => (
+  <StoryCard {...args} />
 );
 
 export const Default = Template.bind({});

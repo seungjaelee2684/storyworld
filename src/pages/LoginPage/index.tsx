@@ -32,6 +32,8 @@ const LoginPage = () => {
     if (id.length <= 0) return alert('아이디를 입력해주십시오.');
     if (pw.length <= 0) return alert('비밀번호를 입력해주십시오.');
     if ((idValue !== id) || (pwValue !== pw)) return alert('아이디 혹은 비밀번호가 일치하지 않습니다.'); 
+    
+    navigate('/');
   };
 
   return (
