@@ -8,4 +8,8 @@ export const MainContentContainer = styled.article`
   align-items: center;
   position: relative;
   padding: 100px 0px;
+
+  @media screen and (max-width: 1040px) {
+    padding: 80px 20px;
+  }
 `;

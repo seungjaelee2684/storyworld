@@ -7,11 +7,15 @@ export const StoryListContainer = styled.section`
     justify-content: start;
     align-items: start;
     gap: 40px;
+
+    @media screen and (max-width: 1040px) {
+        width: 100%;
+    }
 `;
 
 export const ListContainer = styled.ul`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 24px;
 `;

@@ -7,6 +7,7 @@ import Header from './components/common/Header';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import StoryListPage from './pages/StoryListPage';
+import StoryDetailPage from './pages/StoryDetailPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/stories' element={<StoryListPage />} />
             <Route path='/stories/upload' element={<UploadStory />} />
+            <Route path='/stories/:storyId' element={<StoryDetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
