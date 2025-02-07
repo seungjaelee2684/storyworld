@@ -2,8 +2,7 @@ import ImageBox from "../../atoms/ImageBox";
 import { CardBox, CardContainer, CardSubTitle, CardTitle, CardTitleWrapper, CardWriter } from "./style";
 import CardImg from "../../../../assets/images/background.webp";
 
-interface CardProps {
-  type?: string;
+interface StoryCardProps {
   fullWidth?: boolean;
   href?: string;
   title?: string;
@@ -12,23 +11,20 @@ interface CardProps {
   image?: string;
 };
 
-const Card = ({
-  type = 'story',
+const StoryCard = ({
   fullWidth = false,
   href,
   title,
   sub,
   writer,
   image,
-}: CardProps) => {
+}: StoryCardProps) => {
   return (
     <CardContainer
-      $isstory={(type === 'story')}
       $full={fullWidth}>
       <CardBox href={href}>
         <ImageBox 
-          size={(type === 'story') ? 'extralarge' : 'medium'}
-          rounded={(type !== 'story')}
+          size='extralarge'
           src={(image) ? image : CardImg}
           alt='프로필 이미지' />
         <CardTitleWrapper>
@@ -41,4 +37,4 @@ const Card = ({
   )
 };
 
-export default Card;
+export default StoryCard;

@@ -1,5 +1,5 @@
 import PageTitle from "../../components/ui/atoms/PageTitle";
-import Card from "../../components/ui/modules/Card";
+import StoryCard from "../../components/ui/modules/StoryCard";
 import EmptyList from "../../components/ui/modules/EmptyList";
 import { ListContainer, StoryListContainer } from "./style";
 import Img1 from "../../assets/images/background.webp";
@@ -34,7 +34,7 @@ const StoryListPage = () => {
       <ListContainer>
         {(resultList?.length > 0)
           ? resultList?.map((item: any, index: number) =>
-            <Card
+            <StoryCard
               key={index}
               title={item?.title}
               sub={item?.genre}

@@ -8,6 +8,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import StoryListPage from './pages/StoryListPage';
 import StoryDetailPage from './pages/StoryDetailPage';
+import EpisodeDetailPage from './pages/EpisodeDetailPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/stories' element={<StoryListPage />} />
             <Route path='/stories/upload' element={<UploadStory />} />
             <Route path='/stories/:storyId' element={<StoryDetailPage />} />
+            <Route path='/episodes/detail/:episodeId' element={<EpisodeDetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
