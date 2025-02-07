@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue_heavy, light_blue_strong } from "../../../../styles/color_pallete";
+import { light_blue_strong } from "../../../../styles/color_pallete";
 
 export const SubTitleContainer = styled.div<{
     $full: boolean,

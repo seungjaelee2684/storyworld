@@ -22,11 +22,6 @@ const ButtonComponent = ({
   style,
 }: ButtonComponentProps) => {
 
-  const buttonClickHandler = (e: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   const buttonType = () => {
     if (href) {
       return (

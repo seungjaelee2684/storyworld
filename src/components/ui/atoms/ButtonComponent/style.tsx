@@ -1,5 +1,5 @@
 import styled, { css, RuleSet } from "styled-components";
-import { light_blue, light_blue_black, light_blue_heavy, light_blue_strong, primary, primary_heavy, primary_light } from "../../../../styles/color_pallete";
+import { light_blue_black, light_blue_heavy, light_blue_strong, primary, primary_heavy, primary_light } from "../../../../styles/color_pallete";
 
 const size: { [key: string]: RuleSet } = {
   "small": css`

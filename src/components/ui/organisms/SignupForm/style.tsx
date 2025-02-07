@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
+import { light_blue } from "../../../../styles/color_pallete";
 
 export const SignupFormContainer = styled.form`
   width: 540px;

@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, NavButton, NavigateWrapper } from './style';
 import ButtonComponent from '../../ui/atoms/ButtonComponent';
 
 const Header = () => {
 
   const headerRef = useRef<HTMLDivElement>(null);
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  // const [isLogin, setIsLogin] = useState<boolean>(false);
 
   return (
     <HeaderLayout ref={headerRef}>
