@@ -8,6 +8,10 @@ export const MainContainer = styled.div`
   justify-content: start;
   align-items: center;
   gap: 60px;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
 `;
 
 export const MainBanner = styled.section`

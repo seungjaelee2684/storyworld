@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.section`
-  width: fit-content;
-  height: calc(100dvh - 200px);
+export const EpisodeContainer = styled.section`
+  width: 1040px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  gap: 40px;
 
   @media screen and (max-width: 1040px) {
     width: 100%;

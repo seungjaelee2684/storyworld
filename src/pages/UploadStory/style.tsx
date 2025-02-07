@@ -7,4 +7,8 @@ export const UploadContainer = styled.section`
     justify-content: start;
     align-items: start;
     gap: 60px;
+
+    @media screen and (max-width: 1040px) {
+        width: 100%;
+    }
 `;

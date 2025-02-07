@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
+import { EpisodeContainer } from "./style";
 
 const EpisodeDetailPage = () => {
 
   const { episodeId } = useParams();
 
   return (
-    <div>EpisodeDetailPage{episodeId}</div>
+    <EpisodeContainer>
+      EpisodeDetailPage{episodeId}
+    </EpisodeContainer>
   )
 };
 
