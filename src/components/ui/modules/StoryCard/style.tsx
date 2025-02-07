@@ -2,18 +2,6 @@ import styled from "styled-components";
 import { light_blue_black, light_blue_heavy, primary_light } from "../../../../styles/color_pallete";
 import { ImageWrapper } from "../../atoms/ImageBox/style";
 
-// const size: { [key: string]: string } = {
-//   small: `
-
-//   `,
-//   medium: `
-
-//   `,
-//   large: `
-  
-//   `
-// };
-
 export const CardContainer = styled.li<{
   $full: boolean,
 }>`
