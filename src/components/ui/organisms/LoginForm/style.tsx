@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
 
 export const LoginFormContainer = styled.form`
-  width: 540px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;

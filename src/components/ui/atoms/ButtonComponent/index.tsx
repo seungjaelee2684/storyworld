@@ -9,6 +9,7 @@ interface ButtonComponentProps {
   fullWidth?: boolean;
   onClick?: (e: any) => void;
   style?: React.CSSProperties;
+  icon?: React.ReactNode;
 };
 
 const ButtonComponent = ({
@@ -20,6 +21,7 @@ const ButtonComponent = ({
   fullWidth = false,
   onClick,
   style,
+  icon
 }: ButtonComponentProps) => {
 
   const buttonType = () => {
@@ -33,6 +35,7 @@ const ButtonComponent = ({
           $full={fullWidth}
           onClick={onClick}
           style={style}>
+          {icon}
           {label}
         </ButtonLinkStyle>
       )
@@ -45,6 +48,7 @@ const ButtonComponent = ({
           $full={fullWidth}
           onClick={onClick}
           style={style}>
+          {icon}
           {label}
         </ButtonStyle>
       )

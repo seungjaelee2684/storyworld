@@ -10,8 +10,10 @@ import StoryListPage from './pages/StoryListPage';
 import StoryDetailPage from './pages/StoryDetailPage';
 import EpisodeDetailPage from './pages/EpisodeDetailPage';
 import ErrorPage from './pages/ErrorPage';
+import CharacterDetailPage from './pages/CharacterDetailPage';
 
 function App() {
+
   return (
     <main className='App'>
       <BrowserRouter>
@@ -25,6 +27,7 @@ function App() {
             <Route path='/stories/upload' element={<UploadStory />} />
             <Route path='/stories/:storyId' element={<StoryDetailPage />} />
             <Route path='/episodes/detail/:episodeId' element={<EpisodeDetailPage />} />
+            <Route path='/characters/detail/:characterId' element={<CharacterDetailPage />} />
             <Route path='/*' element={<ErrorPage />} />
           </Route>
         </Routes>

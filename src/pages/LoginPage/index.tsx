@@ -40,7 +40,7 @@ const LoginPage = () => {
       now.getDate() + 1, // 다음 날로 설정
       0, 0, 0
     );
-    document.cookie = `sb-lg=${idValue}; expires=${midnight.toUTCString()}; path=/`;
+    document.cookie = `stw-lg=${idValue}; expires=${midnight.toUTCString()}; path=/`;
     navigate('/');
   };
 
