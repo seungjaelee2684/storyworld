@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { primary } from "../../../styles/color_pallete";
+import { light_blue_black, primary } from "../../../styles/color_pallete";
 
 export const HeaderLayout = styled.header`
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@ export const HeaderLayout = styled.header`
   /* box-shadow: 0px 0px 8px 0px #2220202b; */
   padding: 0px 20px;
   transition: all 0.4s ease-in-out;
+  user-select: none;
 `;
 
 export const HeaderInlineContainer = styled.nav`
@@ -81,4 +82,10 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 4px;
+`;
+
+export const LoginText = styled.div`
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: ${light_blue_black};
 `;

@@ -5,9 +5,12 @@ import { ListContainer, StoryListContainer } from "./style";
 import Img1 from "../../assets/images/background.webp";
 import Img2 from "../../assets/images/background2.webp";
 import Img3 from "../../assets/images/background3.webp";
-import ToggleContainer from "../../components/ui/modules/ToggleContainer";
 import Toggle from "../../components/ui/atoms/Toggle";
 import { useState } from "react";
+import BetweenLane from "../../components/ui/organisms/BetweenLane";
+import ToggleButton from "../../components/ui/modules/ToggleButton";
+import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
+import { PenTool } from "lucide-react";
 
 const StoryListPage = () => {
 
@@ -28,9 +31,20 @@ const StoryListPage = () => {
   return (
     <StoryListContainer>
       <PageTitle title='My Stories' sub='stories' />
-      <ToggleContainer state={isMine} label='내 스토리 보기'>
-        <Toggle state={isMine} action={setIsMine} />
-      </ToggleContainer>
+      <BetweenLane
+        type="both"
+        first={
+          <ToggleButton state={isMine} label='내 스토리 보기'>
+            <Toggle state={isMine} action={setIsMine} />
+          </ToggleButton>
+        }
+        second={
+          <ButtonComponent
+            icon={<PenTool size={16} />}
+            label='새 스토리 추가'
+            btnType='term'
+            href='/stories/upload' />
+        } />
       <ListContainer>
         {(resultList?.length > 0)
           ? resultList?.map((item: any, index: number) =>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { light_blue } from "../../../../styles/color_pallete";
 
 export const SignupFormContainer = styled.form`
-  width: 540px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
