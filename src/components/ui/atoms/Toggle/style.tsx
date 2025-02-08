@@ -12,7 +12,6 @@ export const ToggleButton = styled.button<{ $toggle: boolean }>`
   align-items: center;
   padding: 0px 4px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 4px 0px #22202080 inset;
   transition: all 0.2s;
   cursor: pointer;
 `;
@@ -22,7 +21,6 @@ export const ToggleSwitch = styled.div<{ $toggle: boolean }>`
   height: 20px;
   border-radius: 100%;
   background-color: #fefefe;
-  box-shadow: 1px 1px 4px 0px #22202080;
   transform: ${(props) => props.$toggle ? 'translateX(24px)' : 'translateX(0px)'};
   transition: all 0.2s;
 `;
