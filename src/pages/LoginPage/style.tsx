@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.section`
-  width: fit-content;
-  height: calc(100dvh - 200px);
+  width: 540px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 80px;
 
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: 540px) {
     width: 100%;
   }
 `;

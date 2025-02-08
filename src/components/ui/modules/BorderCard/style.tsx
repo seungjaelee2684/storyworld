@@ -34,6 +34,15 @@ export const CardBox = styled.a`
   gap: 16px;
 `;
 
+export const TopLane = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 40px;
+  font-size: 36px;
+`;
+
 export const CardTitleWrapper = styled.div`
   width: 100%;
   display: flex;

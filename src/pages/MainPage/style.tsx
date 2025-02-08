@@ -21,6 +21,10 @@ export const MainBanner = styled.section`
   border-radius: 20px;
   position: relative;
   user-select: none;
+
+  @media screen and (max-width: 1040px) {
+    height: 200px;
+  }
 `;
 
 export const MainBannerImage = styled.img`
@@ -34,12 +38,17 @@ export const MainBannerText = styled.p`
   position: absolute;
   left: 40px;
   bottom: 100px;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   text-shadow: #22202080 0px 0px 8px;
   color: #ffffff;
   text-align: start;
   white-space: pre-line;
+
+  @media screen and (max-width: 1040px) {
+    font-size: 1.6rem;
+    bottom: 30px;
+  }
 `;
 
 export const StoryListContainer = styled.div`
