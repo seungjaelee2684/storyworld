@@ -11,6 +11,7 @@ interface DynamicInputProps {
   name?: string;
   value?: any;
   label?: string;
+  autoComplete?: string;
   onChange?: (e: any) => void;
 };
 
@@ -22,6 +23,7 @@ const DynamicInput = ({
   name,
   value,
   label,
+  autoComplete = 'off',
   onChange,
 }: DynamicInputProps) => {
 
@@ -41,6 +43,7 @@ const DynamicInput = ({
         value={value}
         type={isView}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         onChange={onChange} />
       <DynamicInputLabel $size={size}>
         {label}

@@ -10,6 +10,7 @@ interface InputProps {
   name?: string;
   value?: any;
   placeholder?: string;
+  autoComplete?: string;
   onChange?: (e: any) => void;
 };
 
@@ -20,6 +21,7 @@ const Input = ({
   name,
   value,
   placeholder = '입력해주세요.',
+  autoComplete = 'off',
   onChange,
 }: InputProps) => {
 
@@ -38,7 +40,8 @@ const Input = ({
         name={name}
         value={value}
         placeholder={placeholder}
-        onChange={onChange} />
+        onChange={onChange}
+        autoComplete={autoComplete} />
       {(type === 'password')
         && <PasswordIcon>
           {(isView === 'password')
