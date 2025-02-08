@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import StoryListPage from './pages/StoryListPage';
 import StoryDetailPage from './pages/StoryDetailPage';
 import EpisodeDetailPage from './pages/EpisodeDetailPage';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/stories/upload' element={<UploadStory />} />
             <Route path='/stories/:storyId' element={<StoryDetailPage />} />
             <Route path='/episodes/detail/:episodeId' element={<EpisodeDetailPage />} />
+            <Route path='/*' element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
