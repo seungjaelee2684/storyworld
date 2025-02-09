@@ -1,5 +1,5 @@
 import styled, { css, RuleSet } from "styled-components";
-import { light_blue_black, light_blue_heavy, light_blue_strong, primary, primary_heavy, primary_light } from "../../../../styles/color_pallete";
+import { light_blue, light_blue_black, light_blue_heavy, light_blue_strong, primary, primary_heavy, primary_light } from "../../../../styles/color_pallete";
 
 const size: { [key: string]: RuleSet } = {
   "small": css`
@@ -42,6 +42,11 @@ const btnType: { [key: string]: RuleSet } = {
     color: #ffffff;
     border: none;
     background-color: ${light_blue_heavy};
+  `,
+  "light": css`
+    color: #333333;
+    border: none;
+    background-color: ${light_blue};
   `
 };
 
@@ -65,6 +70,11 @@ const btnHover: { [key: string]: RuleSet } = {
     color: #ffffff;
     border: none;
     background-color: ${light_blue_strong};
+  `,
+  "light": css`
+    color: #ffffff;
+    border: none;
+    background-color: ${light_blue_strong};
   `
 };
 
@@ -85,6 +95,11 @@ const btnActive: { [key: string]: RuleSet } = {
     background-color: transparent;
   `,
   "term": css`
+    color: #ffffff;
+    border: none;
+    background-color: ${light_blue_black};
+  `,
+  "light": css`
     color: #ffffff;
     border: none;
     background-color: ${light_blue_black};

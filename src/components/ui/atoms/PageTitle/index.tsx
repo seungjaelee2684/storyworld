@@ -1,20 +1,23 @@
 import { PageSubTitle, PageTitleContainer, PageTitleWrapper } from "./style";
 
 interface PageTitleProps {
-    title: string;
-    sub: string;
+  title: string;
+  sub?: string;
+  between?: boolean;
+  object?: React.ReactNode;
 };
 
 const PageTitle = ({
-    title,
-    sub
+  title,
+  sub,
+  between = false,
+  object,
 }: PageTitleProps) => {
   return (
-    <PageTitleContainer>
-        <PageTitleWrapper>{title}</PageTitleWrapper>
-        <PageSubTitle>
-            {sub}
-        </PageSubTitle>
+    <PageTitleContainer $between={between}>
+      <PageTitleWrapper>{title}</PageTitleWrapper>
+      {(sub) && <PageSubTitle>{sub}</PageSubTitle>}
+      {(object) && object}
     </PageTitleContainer>
   )
 };
