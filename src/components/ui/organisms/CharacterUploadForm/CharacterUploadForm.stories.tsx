@@ -16,10 +16,15 @@ const Template: StoryFn<typeof CharacterUploadForm> = (args: any) => (
 export const Default = Template.bind({});
 Default.args = {
     state: {
-        storyName: '',
-        description: '',
-        genre: '',
-    },
+        name: '',
+        age: '',
+        gender: 0,
+        occupation: '',
+        location: '',
+        trait: [],
+        trait_content: '',
+        background: ''
+      },
     action: () => {},
 };
 // Default의 props 지정

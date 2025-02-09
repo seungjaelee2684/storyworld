@@ -9,20 +9,20 @@ const width: { [key: string]: string } = {
 
 const size: { [key: string]: RuleSet } = {
     small: css`
-        height: 32px;
-        min-height: 32px;
+        height: 30px;
+        min-height: 30px;
         padding: 0px 12px;
         font-size: 14px;
     `,
     medium: css`
-        height: 38px;
-        min-height: 38px;
+        height: 36px;
+        min-height: 36px;
         padding: 0px 14px;
         font-size: 15px;
     `,
     large: css`
-        height: 48px;
-        min-height: 48px;
+        height: 42px;
+        min-height: 42px;
         padding: 0px 16px;
         font-size: 16px;
     `

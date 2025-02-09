@@ -12,3 +12,12 @@ export const UploadFormContainer = styled.form`
         gap: 40px;
     }
 `;
+
+export const CharacterListWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 12px;
+    flex-wrap: wrap;
+`;

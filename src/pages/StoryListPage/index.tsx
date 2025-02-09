@@ -54,7 +54,7 @@ const StoryListPage = () => {
               sub={item?.genre}
               writer={item?.writer}
               image={item?.image}
-              href={`/stories/${item?.id}`} />)
+              href={`/stories/detail/${item?.id}`} />)
           : <EmptyList />}
       </ListContainer>
     </StoryListContainer>

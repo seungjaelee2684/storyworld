@@ -4,18 +4,26 @@ interface TitleLaneComponenttProps {
     size?: string;
     title: string;
     more?: string;
+    render?: React.ReactNode;
     unPadding?: boolean;
+    style?: React.CSSProperties;
 };
 
 const TitleLaneComponent = ({
     size = 'medium',
     title,
     more,
+    render,
     unPadding = false,
+    style,
+    ...props
 }: TitleLaneComponenttProps) => {
 
     return (
-        <ListTopLane $unpadding={unPadding}>
+        <ListTopLane
+            $unpadding={unPadding}
+            style={style}
+            {...props}>
             <ListTitle
                 $size={size}>
                 {title}
@@ -24,6 +32,7 @@ const TitleLaneComponent = ({
                 && <MoreButton href={more}>
                     더보기
                 </MoreButton>}
+            {(render) && render}
         </ListTopLane>
     )
 };
