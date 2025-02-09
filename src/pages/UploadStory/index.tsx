@@ -1,8 +1,10 @@
 import { UploadContainer } from './style';
 import UploadForm from '../../components/ui/organisms/UploadForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const UploadStory = () => {
+
+  const story = new URLSearchParams(window.location.search).get('story');
 
   const [upload, setUpload] = useState<any>({
     storyName: '',
@@ -17,6 +19,12 @@ const UploadStory = () => {
       [name]: value
     });
   };
+
+  useEffect(() => {
+    if (story) {
+      
+    }
+  }, [story]);
 
   return (
     <UploadContainer>
