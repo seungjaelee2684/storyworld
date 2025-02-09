@@ -37,6 +37,10 @@ export const InputContainer = styled.div<{
   border: 1px solid ${(props) => props.$focus ? light_blue_heavy : light_blue};
   border-radius: 8px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
 `;
 
 export const InputStyle = styled.input`

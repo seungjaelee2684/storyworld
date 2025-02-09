@@ -17,7 +17,8 @@ const DropdownComponent = ({
     state,
     action,
     options,
-    style
+    style,
+    ...props
 }: DropdownComponentProps) => {
 
     const dropdownRef = useRef<HTMLButtonElement>(null);
@@ -57,7 +58,8 @@ const DropdownComponent = ({
             $size={size}
             $open={open}
             style={style}
-            ref={dropdownRef}>
+            ref={dropdownRef}
+            {...props}>
             {(state !== '') ? state : '선택해주세요'}
             {(open) ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
             {(open)

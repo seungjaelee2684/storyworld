@@ -37,7 +37,11 @@ const Header = () => {
   };
 
   useEffect(() => {
-    setIsLogin(!!loginValue);
+    if (loginValue) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    };
   }, [loginValue]);
 
   return (
