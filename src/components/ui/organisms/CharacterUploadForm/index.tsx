@@ -46,7 +46,7 @@ const CharacterUploadForm = ({
 
     return (
         <UploadFormContainer onSubmit={submitUploadHandle}>
-            <PageTitle title='Character Upload' sub='Create your own character' />
+            <PageTitle title='Character Upload' sub='Create your own character!' />
             <TitleLaneComponent unPadding title='Basic Information' />
             <InputLane label='Character Name' >
                 <Input

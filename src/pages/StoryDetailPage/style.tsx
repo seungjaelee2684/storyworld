@@ -13,6 +13,13 @@ export const StoryContainer = styled.section`
   }
 `;
 
+export const StoryButtonWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+`;
+
 export const DetailListContainer = styled.ul`
   width: 100%;
   display: grid;

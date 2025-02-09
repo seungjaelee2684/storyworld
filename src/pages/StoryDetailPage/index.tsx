@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { DetailListContainer, StoryContainer } from "./style";
+import { DetailListContainer, StoryButtonWrapper, StoryContainer } from "./style";
 import PageTitle from "../../components/ui/atoms/PageTitle";
 import TitleLaneComponent from "../../components/ui/atoms/TitleLaneComponent";
 import BorderCard from "../../components/ui/modules/BorderCard";
@@ -8,6 +8,8 @@ import Img2 from "../../assets/images/background2.webp";
 import Img3 from "../../assets/images/background3.webp";
 import EmptyList from "../../components/ui/modules/EmptyList";
 import { IoMale, IoFemale } from "react-icons/io5";
+import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
+import { PenTool } from "lucide-react";
 
 const StoryDetailPage = () => {
 
@@ -35,7 +37,22 @@ const StoryDetailPage = () => {
   return (
     <StoryContainer>
       <PageTitle title='신비아이' sub={`판타지 • ${storyId} Episodes • ${storyId} Characters`} />
-      <TitleLaneComponent title='Episodes' />
+      <TitleLaneComponent
+        title='Episodes'
+        render={
+          <StoryButtonWrapper>
+            <ButtonComponent
+              label='에피소드 추가'
+              href='/episodes/upload'
+              icon={<PenTool size={16} />}
+              btnType='term' />
+            <ButtonComponent
+              label='캐릭터 추가'
+              href='/characters/upload'
+              icon={<PenTool size={16} />}
+              btnType='term' />
+          </StoryButtonWrapper>
+        } />
       <DetailListContainer>
         {(episodeList?.length > 0)
           ? episodeList?.map((item: any, index: number) =>

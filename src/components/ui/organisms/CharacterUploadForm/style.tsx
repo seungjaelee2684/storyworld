@@ -7,6 +7,10 @@ export const UploadFormContainer = styled.form`
     justify-content: start;
     align-items: start;
     gap: 60px;
+
+    @media screen and (max-width: 1040px) {
+        gap: 40px;
+    }
 `;
 
 export const RadioWrapper = styled.div`
@@ -15,6 +19,7 @@ export const RadioWrapper = styled.div`
     justify-content: start;
     align-items: center;
     gap: 60px;
+    margin-top: 20px;
 `;
 
 export const CheckboxWrapper = styled.div`
@@ -24,4 +29,5 @@ export const CheckboxWrapper = styled.div`
     align-items: start;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 20px;
 `;

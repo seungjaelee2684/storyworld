@@ -12,6 +12,7 @@ import EpisodeDetailPage from './pages/EpisodeDetailPage';
 import ErrorPage from './pages/ErrorPage';
 import CharacterDetailPage from './pages/CharacterDetailPage';
 import CharacterUploadPage from './pages/CharacterUploadPage';
+import EpisodeUploadPage from './pages/EpisodeUploadPage';
 
 function App() {
 
@@ -26,8 +27,9 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/stories' element={<StoryListPage />} />
             <Route path='/stories/upload' element={<StoryUploadPage />} />
-            <Route path='/stories/:storyId' element={<StoryDetailPage />} />
+            <Route path='/stories/detail/:storyId' element={<StoryDetailPage />} />
             <Route path='/episodes/detail/:episodeId' element={<EpisodeDetailPage />} />
+            <Route path='/episodes/upload' element={<EpisodeUploadPage />} />
             <Route path='/characters/detail/:characterId' element={<CharacterDetailPage />} />
             <Route path='/characters/upload' element={<CharacterUploadPage />} />
             <Route path='/*' element={<ErrorPage />} />

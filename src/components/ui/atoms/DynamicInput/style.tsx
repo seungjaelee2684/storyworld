@@ -50,6 +50,10 @@ export const DynamicInputContainer = styled.div<{
   border-radius: 8px;
   box-sizing: border-box;
   position: relative;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
 `;
 
 export const DynamicInputLabel = styled.label<{
