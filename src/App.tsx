@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainLayout from './components/common/MainLayout';
 import MainPage from './pages/MainPage';
-import UploadStory from './pages/UploadStory';
+import StoryUploadPage from './pages/StoryUploadPage';
 import Header from './components/common/Header';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -11,6 +11,7 @@ import StoryDetailPage from './pages/StoryDetailPage';
 import EpisodeDetailPage from './pages/EpisodeDetailPage';
 import ErrorPage from './pages/ErrorPage';
 import CharacterDetailPage from './pages/CharacterDetailPage';
+import CharacterUploadPage from './pages/CharacterUploadPage';
 
 function App() {
 
@@ -24,10 +25,11 @@ function App() {
             <Route path='/signup' element={<SignupPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/stories' element={<StoryListPage />} />
-            <Route path='/stories/upload' element={<UploadStory />} />
+            <Route path='/stories/upload' element={<StoryUploadPage />} />
             <Route path='/stories/:storyId' element={<StoryDetailPage />} />
             <Route path='/episodes/detail/:episodeId' element={<EpisodeDetailPage />} />
             <Route path='/characters/detail/:characterId' element={<CharacterDetailPage />} />
+            <Route path='/characters/upload' element={<CharacterUploadPage />} />
             <Route path='/*' element={<ErrorPage />} />
           </Route>
         </Routes>

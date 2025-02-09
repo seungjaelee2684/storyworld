@@ -41,7 +41,7 @@ const LoginPage = () => {
       0, 0, 0
     );
     document.cookie = `stw-lg=${idValue}; expires=${midnight.toUTCString()}; path=/`;
-    navigate('/');
+    navigate(-1);
   };
 
   return (

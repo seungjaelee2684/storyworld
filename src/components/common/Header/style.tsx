@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue_black, primary } from "../../../styles/color_pallete";
+import { light_blue, primary } from "../../../styles/color_pallete";
 
 export const HeaderLayout = styled.header`
   width: 100%;
@@ -81,11 +81,17 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 `;
 
-export const LoginText = styled.div`
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: ${light_blue_black};
+export const LoginText = styled.a`
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: ${light_blue};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
 `;
