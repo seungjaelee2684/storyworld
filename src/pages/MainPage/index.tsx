@@ -5,8 +5,6 @@ import CreateButton from '../../components/ui/atoms/CreateButton';
 
 const MainPage = () => {
 
-  // const cookie = getCookies('sb-lg');
-
   return (
     <MainContainer>
       <MainBanner>

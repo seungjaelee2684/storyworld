@@ -2,7 +2,7 @@ import { UploadContainer } from './style';
 import UploadForm from '../../components/ui/organisms/UploadForm';
 import { useEffect, useState } from 'react';
 
-const UploadStory = () => {
+const StoryUploadPage = () => {
 
   const story = new URLSearchParams(window.location.search).get('story');
 
@@ -36,4 +36,4 @@ const UploadStory = () => {
   )
 };
 
-export default UploadStory;
+export default StoryUploadPage;
