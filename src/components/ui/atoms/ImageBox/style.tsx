@@ -44,6 +44,7 @@ export const ImageContainer = styled.div<{
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 `;
 
 export const ImageWrapper = styled.img`

@@ -5,6 +5,7 @@ interface ImageBoxProps {
   alt?: string;
   size?: string;
   rounded?: boolean;
+  style?: React.CSSProperties;
 };
 
 const ImageBox = ({
@@ -12,11 +13,15 @@ const ImageBox = ({
   alt,
   size = 'medium',
   rounded = false,
+  style,
+  ...props
 }: ImageBoxProps) => {
   return (
     <ImageContainer
       $size={size}
-      $rounded={rounded}>
+      $rounded={rounded}
+      style={style}
+      {...props}>
       <ImageWrapper
         src={src}
         alt={alt} />
