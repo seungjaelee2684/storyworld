@@ -18,6 +18,10 @@ export const HeaderLayout = styled.header`
   padding: 0px 20px;
   transition: all 0.4s ease-in-out;
   user-select: none;
+
+  @media screen and (max-width: 1040px) {
+    height: 60px;
+  }
 `;
 
 export const HeaderInlineContainer = styled.nav`
@@ -48,6 +52,10 @@ export const LogoImage = styled.img`
   width: 200px;
   height: 100%;
   object-fit: contain;
+
+  @media screen and (max-width: 1040px) {
+    width: 130px;
+  }
 `;
 
 export const HeaderRightWrapper = styled.div`
@@ -56,14 +64,10 @@ export const HeaderRightWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 40px;
-`;
 
-export const NavigateWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
+  @media screen and (max-width: 1040px) {
+    gap: 8px;
+  }
 `;
 
 export const NavButton = styled.a`
@@ -79,6 +83,10 @@ export const NavButton = styled.a`
 
   &:hover {
     color: ${primary};
+  }
+
+  @media screen and (max-width: 1040px) {
+    display: none;
   }
 `;
 

@@ -30,7 +30,7 @@ const EpisodeUploadForm = ({
 
     console.log(character);
 
-    const changeHandler = (item: any) => {
+    const handleCharacterSelect= (item: any) => {
         if (character?.includes(item)) {
             const filterData = character.filter((check: any) => item !== check);
             setCharacter(filterData);
@@ -50,17 +50,19 @@ const EpisodeUploadForm = ({
                     size='large'
                     name='title'
                     value={title}
+                    fullWidth
                     onChange={(e: any) => setTitle(e.target.value)} />
             </InputLane>
-            <InputLane label='Character' >
+            <InputLane label='Characters in this episode' >
                 <CharacterListWrapper>
                     {options?.map((item: any, index: number) =>
                         <CharacterCheck
                             key={index}
                             image={genderData[item.gender].image}
-                            value={item.name}
-                            checked={character?.includes(item.name)}
-                            onChange={() => changeHandler(item.name)} />)}
+                            value={item.id}
+                            characterName={item.name}
+                            checked={character?.includes(item.id)}
+                            onChange={() => handleCharacterSelect(item.id)} />)}
                 </CharacterListWrapper>
             </InputLane>
             <InputLane label='Story'>

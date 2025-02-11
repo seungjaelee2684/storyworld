@@ -12,4 +12,9 @@ export const SignupFormContainer = styled.form`
   border: 1px solid ${light_blue};
   border-radius: 10px;
   user-select: none;
+
+  @media screen and (max-width: 1040px) {
+    padding: 0px;
+    border: none;
+  }
 `;

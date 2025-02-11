@@ -13,6 +13,18 @@ const size: { [key: string]: CSSProp } = {
     `,
 };
 
+const mobileSize: { [key: string]: CSSProp } = {
+    small: css`
+        font-size: 12px;
+    `,
+    medium: css`
+        font-size: 14px;
+    `,
+    large: css`
+        font-size: 17px;
+    `,
+};
+
 export const ListTopLane = styled.div<{
     $unpadding: boolean
 }>`
@@ -27,9 +39,17 @@ export const ListTopLane = styled.div<{
 export const ListTitle = styled.div<{ $size: string }>`
   ${(props) => size[props.$size]};
   font-weight: 700;
+  
+  @media screen and (max-width: 1040px) {
+    ${(props) => mobileSize[props.$size]};
+  }
 `;
 
 export const MoreButton = styled.a`
     font-size: 16px;
     color: ${light_blue_heavy};
+
+    @media screen and (max-width: 1040px) {
+        font-size: 10px;
+    }
 `;
