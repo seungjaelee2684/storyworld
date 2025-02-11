@@ -42,7 +42,6 @@ const StoryListPage = () => {
           <ButtonComponent
             icon={<PenTool size={16} />}
             label='새 스토리 추가'
-            btnType='term'
             href='/stories/upload' />
         } />
       <ListContainer>

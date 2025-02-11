@@ -7,5 +7,5 @@ export const ToggleButtonBox = styled.div<{ $toggle: boolean }>`
   align-items: center;
   gap: 8px;
   font-size: 16px;
-  color: ${(props) => props.$toggle ? light_blue_black : '#e9e9e9'};
+  color: ${(props) => props.$toggle ? light_blue_black : '#b4b4b4'};
 `;

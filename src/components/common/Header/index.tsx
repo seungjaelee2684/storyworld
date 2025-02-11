@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, NavButton, NavigateWrapper } from './style';
+import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, LogoImage, NavButton, NavigateWrapper } from './style';
 import ButtonComponent from '../../ui/atoms/ButtonComponent';
 import { getCookies } from '../../../utils/getCookies';
 import SearchBar from '../../ui/atoms/SearchBar';
 // import { useLocation } from 'react-router-dom';
 import { LogOut, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../../assets/logos/storyworld_logo.webp';
 
 const Header = () => {
 
@@ -48,7 +49,7 @@ const Header = () => {
     <HeaderLayout ref={headerRef}>
       <HeaderInlineContainer>
         <HeaderLogo href='/'>
-          StoryWorld
+          <LogoImage src={Logo} alt='로고' />
         </HeaderLogo>
         <HeaderRightWrapper>
           <SearchBar

@@ -44,6 +44,12 @@ export const HeaderLogo = styled.a`
   }
 `;
 
+export const LogoImage = styled.img`
+  width: 200px;
+  height: 100%;
+  object-fit: contain;
+`;
+
 export const HeaderRightWrapper = styled.div`
   height: 100%;
   display: flex;
