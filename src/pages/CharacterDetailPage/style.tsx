@@ -10,6 +10,7 @@ export const CharacterContainer = styled.section`
 
   @media screen and (max-width: 1040px) {
     width: 100%;
+    padding-top: 40px;
   }
 `;
 
@@ -19,6 +20,10 @@ export const FirstDetailContainer = styled.div`
   justify-content: start;
   align-items: center;
   gap: 40px;
+
+  @media screen and (max-width: 1040px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const DetailContainer = styled.div`

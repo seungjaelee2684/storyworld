@@ -1,4 +1,4 @@
-import { PageSubTitle, PageTitleContainer, PageTitleWrapper } from "./style";
+import { PageSubTitle, PageTitleContainer, PageTitleWrapper, TitleContainer } from "./style";
 
 interface PageTitleProps {
   title: string;
@@ -15,8 +15,10 @@ const PageTitle = ({
 }: PageTitleProps) => {
   return (
     <PageTitleContainer $between={between}>
-      <PageTitleWrapper>{title}</PageTitleWrapper>
-      {(sub) && <PageSubTitle>{sub}</PageSubTitle>}
+      <TitleContainer>
+        <PageTitleWrapper>{title}</PageTitleWrapper>
+        {(sub) && <PageSubTitle>{sub}</PageSubTitle>}
+      </TitleContainer>
       {(object) && object}
     </PageTitleContainer>
   )

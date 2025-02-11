@@ -28,7 +28,7 @@ const StoryCard = ({
           src={(image) ? image : CardImg}
           alt='프로필 이미지' />
         <CardTitleWrapper>
-          <CardSubTitle>.{sub}</CardSubTitle>
+          {(sub) && <CardSubTitle>.{sub}</CardSubTitle>}
           <CardTitle>{title}</CardTitle>
           <CardWriter>{writer}</CardWriter>
         </CardTitleWrapper>

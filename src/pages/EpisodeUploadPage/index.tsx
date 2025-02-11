@@ -10,7 +10,7 @@ const EpisodeUploadPage = () => {
   const [content, setContent] = useState<string>('');
   const [character, setCharacter] = useState<any>([]);
 
-  const list = Array(10).fill({name: '하비엘', gender: 0});
+  const list = Array(10).fill({id: 1, name: '하비엘', gender: 0});
 
   useEffect(() => {
     if (episode) {

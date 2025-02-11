@@ -7,6 +7,7 @@ interface CharacterCheckProps {
   value?: string;
   image?: string;
   checked?: boolean;
+  characterName?: string;
   onChange?: (e: any) => void;
   style?: React.CSSProperties;
 };
@@ -17,6 +18,7 @@ const CharacterCheck = ({
   value,
   image = '',
   checked = false,
+  characterName,
   onChange,
   style,
   ...props
@@ -32,7 +34,7 @@ const CharacterCheck = ({
         value={value}
         onChange={onChange} />
       <ImageBox size='large' src={image} alt='캐릭터' />
-      {value}
+      {characterName}
     </CharacterCheckBox>
   )
 };

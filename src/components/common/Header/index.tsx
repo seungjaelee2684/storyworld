@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, LogoImage, NavButton, NavigateWrapper } from './style';
+import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, LogoImage, NavButton } from './style';
 import ButtonComponent from '../../ui/atoms/ButtonComponent';
 import { getCookies } from '../../../utils/getCookies';
 import SearchBar from '../../ui/atoms/SearchBar';
@@ -57,11 +57,9 @@ const Header = () => {
             value={search}
             onChange={searchChangeHandle}
             onSubmit={searchSubmitHandle} />
-          <NavigateWrapper>
-            <NavButton href='/stories'>
-              Stories
-            </NavButton>
-          </NavigateWrapper>
+          <NavButton href='/stories'>
+            Stories
+          </NavButton>
           {(isLogin)
             ? <ButtonWrapper>
               <LoginText onClick={() => setOpen(!open)}>
