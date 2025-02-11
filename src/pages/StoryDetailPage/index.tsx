@@ -44,13 +44,11 @@ const StoryDetailPage = () => {
             <ButtonComponent
               label='에피소드 추가'
               href='/episodes/upload'
-              icon={<PenTool size={16} />}
-              btnType='term' />
+              icon={<PenTool size={16} />} />
             <ButtonComponent
               label='캐릭터 추가'
               href='/characters/upload'
-              icon={<PenTool size={16} />}
-              btnType='term' />
+              icon={<PenTool size={16} />} />
           </StoryButtonWrapper>
         } />
       <DetailListContainer>
