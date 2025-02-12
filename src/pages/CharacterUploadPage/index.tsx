@@ -15,7 +15,8 @@ const CharacterUploadPage = () => {
     location: '',
     trait: [],
     trait_content: '',
-    background: ''
+    background: '',
+    name_style: 0,
   });
 
   const list = [

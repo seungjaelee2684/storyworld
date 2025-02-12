@@ -13,7 +13,7 @@ export const UploadFormContainer = styled.form`
     }
 `;
 
-export const RadioWrapper = styled.div`
+export const ImageRadioWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: start;

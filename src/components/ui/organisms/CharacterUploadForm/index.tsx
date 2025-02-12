@@ -1,15 +1,16 @@
 import PageTitle from "../../atoms/PageTitle";
 import TitleLaneComponent from "../../atoms/TitleLaneComponent";
-import { CheckboxWrapper, InputLaneWrapper, RadioWrapper, UploadFormContainer } from "./style";
+import { CheckboxWrapper, InputLaneWrapper, UploadFormContainer, ImageRadioWrapper } from "./style";
 import InputLane from "../../modules/InputLane";
 import Input from "../../atoms/Input";
 import Textarea from "../../atoms/Textarea";
 import ButtonComponent from "../../atoms/ButtonComponent";
-import Radio from "../../atoms/Radio";
+import ImageRadio from "../../atoms/ImageRadio";
 import Checkbox from "../../atoms/Checkbox";
 import { traitTags } from "../../../../modules/traitsList";
 import DropdownComponent from "../../atoms/DropdownComponent";
 import { useEffect, useState } from "react";
+import NameRecommandModal from "../NameRecommandModal";
 
 interface CharacterUploadFormProps {
     state: any;
@@ -28,6 +29,7 @@ const CharacterUploadForm = ({
     const { name, age, gender, occupation, location, trait, trait_content, background } = state;
     console.log(state);
 
+    const [recommandOpen, setRecommandOpen] = useState<boolean>(false);
     const [select, setSelect] = useState<any>(null);
 
     const radioChangeHandle = (e: any) => {
@@ -50,12 +52,29 @@ const CharacterUploadForm = ({
         alert(`${JSON.stringify(state)}`)
     };
 
+    const handleNameRecommandModalOpen = (e: any) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setRecommandOpen(true);
+    };
+
+    const handleNameRecommandModalClose = (e: any) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setRecommandOpen(false);
+    };
+
     useEffect(() => {
         action({ ...state, storyId: select });
     }, [select]);
 
     return (
         <UploadFormContainer onSubmit={submitUploadHandle}>
+            <NameRecommandModal
+                isOpen={recommandOpen}
+                onClose={handleNameRecommandModalClose}
+                state={state}
+                action={action} />
             <PageTitle title='Character Upload' sub='Create your own character!' />
             <TitleLaneComponent unPadding title='Basic Information' />
             <InputLane label='Select your story'>
@@ -76,7 +95,8 @@ const CharacterUploadForm = ({
                         placeholder='캐릭터명'
                         fullWidth />
                     <ButtonComponent
-                        label='이름 추천' />
+                        label='이름 추천'
+                        onClick={handleNameRecommandModalOpen} />
                 </InputLaneWrapper>
             </InputLane>
             <InputLane label='Age' >
@@ -107,20 +127,20 @@ const CharacterUploadForm = ({
                     fullWidth />
             </InputLane>
             <InputLane label='Gender'>
-                <RadioWrapper>
-                    <Radio
+                <ImageRadioWrapper>
+                    <ImageRadio
                         text='남성'
                         name='gender'
                         value={0}
                         checked={gender === 0}
                         onChange={radioChangeHandle} />
-                    <Radio
+                    <ImageRadio
                         text='여성'
                         name='gender'
                         value={1}
                         checked={gender === 1}
                         onChange={radioChangeHandle} />
-                </RadioWrapper>
+                </ImageRadioWrapper>
             </InputLane>
             <InputLane label='Traits'>
                 <CheckboxWrapper>

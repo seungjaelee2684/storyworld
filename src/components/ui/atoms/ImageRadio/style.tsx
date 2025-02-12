@@ -1,13 +1,24 @@
 import styled from "styled-components";
-import { primary, primary_light } from "../../../../styles/color_pallete";
+import { light_blue_black, primary, primary_light } from "../../../../styles/color_pallete";
 
 export const RadioInputContainer = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  font-size: 1.1rem;
+  gap: 8px;
+  font-size: 1rem;
   cursor: pointer;
+`;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: ${light_blue_black};
+  font-size: 18px;
+  font-weight: 500;
 `;
 
 export const RadioInput = styled.input`
@@ -15,8 +26,8 @@ export const RadioInput = styled.input`
 `;
 
 export const CustomRadio = styled.span`
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border: 1px solid ${primary_light};
   border-radius: 50%;
   display: inline-block;
@@ -27,8 +38,8 @@ export const CustomRadio = styled.span`
   // 체크된 경우 내부 점 추가
   ${RadioInput}:checked + &::after {
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background-color: ${primary};
     border-radius: 50%;
     position: absolute;
