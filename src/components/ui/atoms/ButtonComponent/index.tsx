@@ -5,8 +5,9 @@ interface ButtonComponentProps {
   btnType?: string;
   href?: string;
   type?: "button" | "reset" | "submit" | undefined;
-  label: string;
+  label?: string;
   fullWidth?: boolean;
+  title?: string;
   onClick?: (e: any) => void;
   style?: React.CSSProperties;
   icon?: React.ReactNode;
@@ -19,6 +20,7 @@ const ButtonComponent = ({
   type,
   label,
   fullWidth = false,
+  title,
   onClick,
   style,
   icon
@@ -31,6 +33,7 @@ const ButtonComponent = ({
           $size={size}
           $btntype={btnType}
           href={href}
+          title={title}
           type={type}
           $full={fullWidth}
           onClick={onClick}
@@ -44,6 +47,7 @@ const ButtonComponent = ({
         <ButtonStyle
           $size={size}
           $btntype={btnType}
+          title={title}
           type={type}
           $full={fullWidth}
           onClick={onClick}

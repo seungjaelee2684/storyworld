@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { CharacterListContainer, Content, EpisodeContainer } from "./style";
 import PageTitle from "../../components/ui/atoms/PageTitle";
-import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
 import TitleLaneComponent from "../../components/ui/atoms/TitleLaneComponent";
 import CharacterCard from "../../components/ui/modules/ChracterCard";
 import { genderData } from "../../modules/gender";
@@ -12,12 +11,12 @@ const EpisodeDetailPage = () => {
   const { episodeId } = useParams();
 
   const characterList = [
-    { id: 1, name: `하비엘`, occupation: '판타지', gender: 0, },
-    { id: 2, name: `지크 아르덴`, occupation: '판타지', gender: 0, },
-    { id: 3, name: `실비아 드 프란체르`, occupation: '판타지', gender: 1, },
-    { id: 4, name: '마리네', occupation: '판타지', gender: 1, },
-    { id: 5, name: '조니악 키르딘', occupation: '판타지', gender: 0, },
-    { id: 6, name: '아펠리오 드 프란체르', occupation: '판타지', gender: 0, },
+    { id: 1, titleName: `하비엘`, occupation: '판타지', gender: 0, },
+    { id: 2, titleName: `지크 아르덴`, occupation: '판타지', gender: 0, },
+    { id: 3, titleName: `실비아 드 프란체르`, occupation: '판타지', gender: 1, },
+    { id: 4, titleName: '마리네', occupation: '판타지', gender: 1, },
+    { id: 5, titleName: '조니악 키르딘', occupation: '판타지', gender: 0, },
+    { id: 6, titleName: '아펠리오 드 프란체르', occupation: '판타지', gender: 0, },
   ];
 
   const parser = new DOMParser();
@@ -33,13 +32,10 @@ const EpisodeDetailPage = () => {
       <PageTitle
         title={`Episode ${episodeId}) 광기 어린 아이들`}
         sub={`신비아이 • 이승재`}
-        between
-        object={
-          <ButtonComponent
-            label='Edit'
-            btnType='light'
-            href={`/episodes/upload?episode=${episodeId}`} />
-        } />
+        edit={`/episodes/upload?episode=${episodeId}`}
+        onRemove={() => {}}
+        list={`/stories`}
+        isLogin />
       <TitleLaneComponent
         title='에피소드 등장인물들'
         unPadding />
@@ -48,7 +44,7 @@ const EpisodeDetailPage = () => {
           && characterList?.map((item: any, index: number) =>
             <CharacterCard
               key={index}
-              characterName={item?.name}
+              characterName={item?.titleName}
               image={genderData[item?.gender].image}
               href={`/characters/detail/${item?.id}`} />)}
       </CharacterListContainer>

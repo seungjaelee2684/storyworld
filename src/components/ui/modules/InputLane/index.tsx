@@ -5,6 +5,7 @@ interface InputLaneProps {
   state?: string;
   label: string;
   children?: React.ReactNode;
+  notFull?: boolean;
   style?: React.CSSProperties;
 };
 
@@ -12,11 +13,12 @@ const InputLane = ({
   state = 'default',
   label,
   children,
+  notFull = false,
   style,
   ...props
 }: InputLaneProps) => {
   return (
-    <InputLaneContainer style={style} {...props}>
+    <InputLaneContainer $notfull={notFull} style={style} {...props}>
       <InputLabelContainer>
         <LeftWrapper>
           <LabelText>{label}</LabelText>

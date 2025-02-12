@@ -55,3 +55,13 @@ export const InputStyle = styled.input`
     color: ${light_blue_strong};
   }
 `;
+
+export const PasswordIcon = styled.span`
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${light_blue_heavy};
+  cursor: pointer;
+`;

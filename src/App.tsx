@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage';
 import CharacterDetailPage from './pages/CharacterDetailPage';
 import CharacterUploadPage from './pages/CharacterUploadPage';
 import EpisodeUploadPage from './pages/EpisodeUploadPage';
+import MyPage from './pages/MyPage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path='/' element={<MainPage />} />
+            <Route path='/dashboard' element={<MyPage />} />
             <Route path='/signup' element={<SignupPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/stories' element={<StoryListPage />} />
