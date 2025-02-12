@@ -19,7 +19,25 @@ const size: { [key: string]: RuleSet } = {
     height: 42px;
     padding: 0px 24px;
     font-size: 18px;
-  `
+  `,
+  "s_small": css`
+    min-height: fit-content;
+    height: fit-content;
+    padding: 8px;
+    font-size: 14px;
+  `,
+  "s_medium": css`
+    min-height: fit-content;
+    height: fit-content;
+    padding: 12px;
+    font-size: 16px;
+  `,
+  "s_large": css`
+    min-height: fit-content;
+    height: fit-content;
+    padding: 18px;
+    font-size: 18px;
+  `,
 };
 
 const btnType: { [key: string]: RuleSet } = {
@@ -111,6 +129,7 @@ export const ButtonStyle = styled.button<{
   $btntype: string,
   $full: boolean,
 }>`
+  min-width: ${(props) => props.$full ? '100%' : 'fit-content'};
   width: ${(props) => props.$full ? '100%' : 'fit-content'};
   display: flex;
   justify-content: center;

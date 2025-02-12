@@ -41,13 +41,10 @@ const StoryDetailPage = () => {
       <PageTitle
         title='신비아이'
         sub={`판타지 • ${storyId} Episodes • ${storyId} Characters • 이승재`}
-        between
-        object={
-          <ButtonComponent
-            label='Edit'
-            btnType='light'
-            href={`/stories/upload?story=${storyId}`} />
-        } />
+        edit={`/stories/upload?story=${storyId}`}
+        onRemove={() => {}}
+        list={`/stories`}
+        isLogin />
       <TitleLaneComponent title='줄거리' unPadding />
       <ContentBox>
         {`정말이니?`}

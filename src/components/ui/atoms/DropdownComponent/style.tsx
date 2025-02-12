@@ -2,8 +2,8 @@ import styled, { css, RuleSet } from "styled-components";
 import { light_blue, light_blue_heavy } from "../../../../styles/color_pallete";
 
 const width: { [key: string]: string } = {
-    small: `400px;`,
-    medium: `500px;`,
+    small: `300px;`,
+    medium: `400px;`,
     large: `500px;`
 };
 
@@ -42,10 +42,11 @@ const topSize: { [key: string]: RuleSet } = {
 
 export const DropdownButton = styled.button<{
    $full: boolean | undefined,
+   $width: string,
    $size: string,
    $open: boolean;
 }>`
-    width: ${(props) => props.$full ? '100%' : width[props.$size]};
+    width: ${(props) => props.$full ? '100%' : width[props.$width]};
     ${(props) => size[props.$size]};
     border-radius: 8px;
     position: relative;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { light_blue_heavy } from "../../../../styles/color_pallete";
 
-export const PageTitleContainer = styled.div<{ $between: boolean }>`
-    width: ${(props) => props.$between ? '100%' : 'fit-content'};
+export const PageTitleContainer = styled.div`
+    width: 100%;
     display: flex;
-    flex-direction: ${(props) => props.$between ? 'row' : 'column'};
-    justify-content: ${(props) => props.$between ? 'space-between' : 'center'};
-    align-items: ${(props) => props.$between ? 'end' : 'start'};
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     gap: 24px;
     padding: 0px 4px;
     user-select: none;
@@ -20,9 +20,8 @@ export const PageTitleContainer = styled.div<{ $between: boolean }>`
 export const TitleContainer = styled.div`
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: space-between;
+    align-items: center;
     gap: 24px;
 
     @media screen and (max-width: 1040px) {
@@ -31,6 +30,8 @@ export const TitleContainer = styled.div`
 `;
 
 export const PageTitleWrapper = styled.h1`
+    width: 100%;
+    text-align: start;
     font-size: 36px;
     font-weight: 600;
     line-height: 100%;
@@ -49,4 +50,11 @@ export const PageSubTitle = styled.p`
     @media screen and (max-width: 1040px) {
         font-size: 14px;
     }
+`;
+
+export const ObjectWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 `;

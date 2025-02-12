@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import PageTitle from "../../components/ui/atoms/PageTitle";
 import { CharacterContainer, DetailContainer, FirstDetailContainer, LaneContainer } from "./style";
-import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
 import TitleLaneComponent from "../../components/ui/atoms/TitleLaneComponent";
 import CategoryLane from "../../components/ui/atoms/CategoryLane";
 import ChipWrapper from "../../components/ui/modules/ChipWrapper";
@@ -20,14 +19,11 @@ const CharacterDetailPage = () => {
     <CharacterContainer>
       <PageTitle
         title={`My Character ${characterId}`}
-        object={
-          <ButtonComponent
-            label='Edit'
-            size='large'
-            btnType='light'
-            href={`/characters/upload?character=${characterId}`} />
-        }
-        between />
+        sub={`신비아이 • 이승재`}
+        edit={`/characters/upload?character=${characterId}`}
+        onRemove={() => {}}
+        list={`/stories`}
+        isLogin />
       <FirstDetailContainer>
         <DetailContainer>
           <TitleLaneComponent title='Details' unPadding />
