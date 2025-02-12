@@ -1,6 +1,4 @@
-import { RadioInput, RadioInputContainer, CustomRadio, RadioWrapper } from "./style";
-import ImageBox from "../ImageBox";
-import { genderData } from "../../../../modules/gender";
+import { RadioInput, RadioInputContainer, CustomRadio } from "./style";
 
 interface RadioProps {
   text?: string;
@@ -28,10 +26,7 @@ const Radio = ({
         checked={checked}
         onChange={onChange} />
       <CustomRadio />
-      <RadioWrapper>
-        <ImageBox src={genderData[value].image} alt="성별" size="large" />
-        {text}
-      </RadioWrapper>
+      {text}
     </RadioInputContainer>
   )
 };

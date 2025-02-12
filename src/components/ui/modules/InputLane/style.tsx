@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { light_blue_heavy, primary } from "../../../../styles/color_pallete";
 
-export const InputLaneContainer = styled.div`
-  width: 100%;
+export const InputLaneContainer = styled.div<{ $notfull: boolean }>`
+  width: ${(props) => props.$notfull ? 'fit-content' : '100%'};
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -37,14 +37,4 @@ export const EssentialSpan = styled.span`
 export const ChoiceSpan = styled.span`
   font-size: 13px;
   color: ${light_blue_heavy};
-`;
-
-export const PasswordIcon = styled.span`
-  width: 16px;
-  height: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${light_blue_heavy};
-  cursor: pointer;
 `;

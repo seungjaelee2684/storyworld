@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue, primary } from "../../../styles/color_pallete";
+import { light_blue, light_blue_black } from "../../../styles/color_pallete";
 
 export const HeaderLayout = styled.header`
   width: 100%;
@@ -18,6 +18,10 @@ export const HeaderLayout = styled.header`
   padding: 0px 20px;
   transition: all 0.4s ease-in-out;
   user-select: none;
+
+  @media screen and (max-width: 1040px) {
+    height: 60px;
+  }
 `;
 
 export const HeaderInlineContainer = styled.nav`
@@ -44,35 +48,25 @@ export const HeaderLogo = styled.a`
   }
 `;
 
+export const LogoImage = styled.img`
+  width: 200px;
+  height: 100%;
+  object-fit: contain;
+
+  @media screen and (max-width: 1040px) {
+    width: 130px;
+  }
+`;
+
 export const HeaderRightWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-`;
+  gap: 16px;
 
-export const NavigateWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-`;
-
-export const NavButton = styled.a`
-  height: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #595e5f;
-  transition: all 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    color: ${primary};
+  @media screen and (max-width: 1040px) {
+    gap: 8px;
   }
 `;
 
@@ -94,4 +88,8 @@ export const LoginText = styled.a`
   align-items: center;
   transition: all 0.2s;
   cursor: pointer;
+
+  &:hover {
+    color: ${light_blue_black};
+  }
 `;

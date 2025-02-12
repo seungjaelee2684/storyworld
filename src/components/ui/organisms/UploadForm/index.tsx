@@ -24,7 +24,7 @@ const UploadForm = ({
     const { storyName, description } = state;
     console.log(state);
 
-    const optionList = genreList.map((item: any) => item.genre);
+    const optionList = genreList.map((item: any) => item.title);
     const [dropdownValue, setDropdownValue] = useState<string>('');
 
     useEffect(() => {
@@ -59,6 +59,7 @@ const UploadForm = ({
                     state={dropdownValue}
                     action={setDropdownValue}
                     options={optionList}
+                    stringify
                     fullWidth />
             </InputLane>
             <ButtonComponent

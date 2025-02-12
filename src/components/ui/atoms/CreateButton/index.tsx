@@ -2,12 +2,16 @@ import { ChevronRight, Plus } from "lucide-react";
 import { CreateButtonContainer, CreateIconBox, CreateSubTitle, CreateTitle, RightArrow, TextWrapper } from "./style";
 
 interface CreateButtonProps {
+  title?: string;
+  sub?: string;
   size?: string;
   fullWidth?: boolean;
   href?: string;
 };
 
 const CreateButton = ({
+  title,
+  sub,
   size = 'medium',
   fullWidth = false,
   href
@@ -21,9 +25,9 @@ const CreateButton = ({
         <Plus size={24} />
       </CreateIconBox>
       <TextWrapper>
-        <CreateTitle>Create a World</CreateTitle>
+        <CreateTitle>{title}</CreateTitle>
         <CreateSubTitle>
-          A world is a collection of stories.
+          {sub}
         </CreateSubTitle>
       </TextWrapper>
       <RightArrow>

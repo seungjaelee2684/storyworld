@@ -10,6 +10,8 @@ import EmptyList from "../../components/ui/modules/EmptyList";
 import { IoMale, IoFemale } from "react-icons/io5";
 import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
 import { PenTool } from "lucide-react";
+import ContentBox from "../../components/ui/atoms/ContentBox";
+import { genderData } from "../../modules/gender";
 
 const StoryDetailPage = () => {
 
@@ -26,31 +28,40 @@ const StoryDetailPage = () => {
   ];
 
   const characterList = [
-    { id: 1, name: '하비엘', job: '검사', image: Img1, gender: 0 },
-    { id: 2, name: '지크 아르덴', job: '마법사', image: Img2, gender: 0 },
-    { id: 3, name: '실피아 드 프란체르', job: '마법사', image: Img3, gender: 1 },
-    { id: 4, name: '마리네', job: '귀족', image: Img1, gender: 1 },
-    { id: 5, name: '조니악 키르딘', job: '집사', image: Img2, gender: 0 },
-    { id: 6, name: '아펠리오 드 프란체르', job: '마법사', image: Img3, gender: 0 },
+    { id: 1, name: '하비엘', occupation: '검사', image: Img1, gender: 0 },
+    { id: 2, name: '지크 아르덴', occupation: '마법사', image: Img2, gender: 0 },
+    { id: 3, name: '실피아 드 프란체르', occupation: '마법사', image: Img3, gender: 1 },
+    { id: 4, name: '마리네', occupation: '귀족', image: Img1, gender: 1 },
+    { id: 5, name: '조니악 키르딘', occupation: '집사', image: Img2, gender: 0 },
+    { id: 6, name: '아펠리오 드 프란체르', occupation: '마법사', image: Img3, gender: 0 },
   ];
 
   return (
     <StoryContainer>
-      <PageTitle title='신비아이' sub={`판타지 • ${storyId} Episodes • ${storyId} Characters`} />
+      <PageTitle
+        title='신비아이'
+        sub={`판타지 • ${storyId} Episodes • ${storyId} Characters • 이승재`}
+        edit={`/stories/upload?story=${storyId}`}
+        onRemove={() => {}}
+        list={`/stories`}
+        isLogin />
+      <TitleLaneComponent title='줄거리' unPadding />
+      <ContentBox>
+        {`정말이니?`}
+      </ContentBox>
       <TitleLaneComponent
         title='Episodes'
+        unPadding
         render={
           <StoryButtonWrapper>
             <ButtonComponent
               label='에피소드 추가'
               href='/episodes/upload'
-              icon={<PenTool size={16} />}
-              btnType='term' />
+              icon={<PenTool size={16} />} />
             <ButtonComponent
               label='캐릭터 추가'
               href='/characters/upload'
-              icon={<PenTool size={16} />}
-              btnType='term' />
+              icon={<PenTool size={16} />} />
           </StoryButtonWrapper>
         } />
       <DetailListContainer>
@@ -64,15 +75,15 @@ const StoryDetailPage = () => {
               href={`/episodes/detail/${item?.id}`} />)
           : <EmptyList />}
       </DetailListContainer>
-      <TitleLaneComponent title='Characters' />
+      <TitleLaneComponent title='Characters' unPadding />
       <DetailListContainer>
         {(characterList?.length > 0)
           ? characterList?.map((item: any, index: number) =>
             <BorderCard
               key={index}
               title={item?.name}
-              sub={item?.job}
-              image={item?.image}
+              sub={item?.occupation}
+              image={genderData[item?.gender].image}
               href={`/characters/detail/${item?.id}`}
               icon={(item?.gender === 0) ? <IoMale color='#0074D9' /> : <IoFemale color='#FF69B4' />} />)
           : <EmptyList />}

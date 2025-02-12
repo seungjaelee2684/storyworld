@@ -1,12 +1,13 @@
 import PageTitle from "../../atoms/PageTitle";
 import TitleLaneComponent from "../../atoms/TitleLaneComponent";
-import { CharacterListWrapper, UploadFormContainer } from "./style";
+import { CharacterListWrapper, InputWrapper, UploadFormContainer } from "./style";
 import InputLane from "../../modules/InputLane";
 import Input from "../../atoms/Input";
 import ButtonComponent from "../../atoms/ButtonComponent";
 import PostEditor from "../../modules/PostEditor";
 import CharacterCheck from "../../modules/CharacterCheck";
 import { genderData } from "../../../../modules/gender";
+import DropdownComponent from "../../atoms/DropdownComponent";
 
 interface EpisodeUploadFormProps {
     title: string;
@@ -15,6 +16,9 @@ interface EpisodeUploadFormProps {
     setContent: React.Dispatch<React.SetStateAction<string>>;
     character: any[];
     setCharacter: React.Dispatch<React.SetStateAction<any>>;
+    storyId: any;
+    setStoryId: React.Dispatch<React.SetStateAction<any>>;
+    selectOptions: any[];
     options?: any[];
 };
 
@@ -25,12 +29,15 @@ const EpisodeUploadForm = ({
     setContent,
     character,
     setCharacter,
+    storyId,
+    setStoryId,
+    selectOptions,
     options
 }: EpisodeUploadFormProps) => {
 
     console.log(character);
 
-    const changeHandler = (item: any) => {
+    const handleCharacterSelect = (item: any) => {
         if (character?.includes(item)) {
             const filterData = character.filter((check: any) => item !== check);
             setCharacter(filterData);
@@ -45,22 +52,34 @@ const EpisodeUploadForm = ({
                 title='Create Your Episode'
                 sub='Make a great episode in your world!' />
             <TitleLaneComponent unPadding title='Basic Information' />
-            <InputLane label='Episode Title' >
-                <Input
-                    size='large'
-                    name='title'
-                    value={title}
-                    onChange={(e: any) => setTitle(e.target.value)} />
-            </InputLane>
-            <InputLane label='Character' >
+            <InputWrapper>
+                <InputLane label='Episode Title' >
+                    <Input
+                        size='large'
+                        name='title'
+                        value={title}
+                        fullWidth
+                        onChange={(e: any) => setTitle(e.target.value)} />
+                </InputLane>
+                <InputLane label='Select your story' notFull>
+                    <DropdownComponent
+                        size='large'
+                        width='medium'
+                        state={storyId}
+                        action={setStoryId}
+                        options={selectOptions} />
+                </InputLane>
+            </InputWrapper>
+            <InputLane label='Characters in this episode' >
                 <CharacterListWrapper>
                     {options?.map((item: any, index: number) =>
                         <CharacterCheck
                             key={index}
                             image={genderData[item.gender].image}
-                            value={item.name}
-                            checked={character?.includes(item.name)}
-                            onChange={() => changeHandler(item.name)} />)}
+                            value={item.id}
+                            characterName={item.name}
+                            checked={character?.includes(item.id)}
+                            onChange={() => handleCharacterSelect(item.id)} />)}
                 </CharacterListWrapper>
             </InputLane>
             <InputLane label='Story'>

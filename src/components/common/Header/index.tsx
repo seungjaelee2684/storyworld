@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, NavButton, NavigateWrapper } from './style';
+import { ButtonWrapper, HeaderInlineContainer, HeaderLayout, HeaderLogo, HeaderRightWrapper, LoginText, LogoImage } from './style';
 import ButtonComponent from '../../ui/atoms/ButtonComponent';
 import { getCookies } from '../../../utils/getCookies';
 import SearchBar from '../../ui/atoms/SearchBar';
 // import { useLocation } from 'react-router-dom';
-import { LogOut, User } from 'lucide-react';
+import { LibraryBig, LogOut, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../../assets/logos/storyworld_logo.webp';
 
 const Header = () => {
 
@@ -16,13 +17,17 @@ const Header = () => {
 
   const [isLogin, setIsLogin] = useState<boolean>(!!loginValue);
   const [search, setSearch] = useState<string>('');
-  const [open, setOpen] = useState<boolean>(false);
 
   const logoutHandle = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
-    document.cookie = "stw-lg=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    navigate('/');
+
+    const isLogout = confirm('로그아웃 하시겠습니까?');
+
+    if (isLogout) {
+      document.cookie = "stw-lg=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      navigate('/');
+    };
   };
 
   const searchChangeHandle = (e: any) => {
@@ -48,7 +53,7 @@ const Header = () => {
     <HeaderLayout ref={headerRef}>
       <HeaderInlineContainer>
         <HeaderLogo href='/'>
-          StoryWorld
+          <LogoImage src={Logo} alt='로고' />
         </HeaderLogo>
         <HeaderRightWrapper>
           <SearchBar
@@ -56,14 +61,12 @@ const Header = () => {
             value={search}
             onChange={searchChangeHandle}
             onSubmit={searchSubmitHandle} />
-          <NavigateWrapper>
-            <NavButton href='/stories'>
-              Stories
-            </NavButton>
-          </NavigateWrapper>
           {(isLogin)
             ? <ButtonWrapper>
-              <LoginText onClick={() => setOpen(!open)}>
+              <LoginText title='스토리 보기' href='/stories'>
+                <LibraryBig size={24} />
+              </LoginText>
+              <LoginText href='/dashboard'>
                 <User size={24} />
               </LoginText>
               <LoginText onClick={logoutHandle}>
@@ -71,6 +74,9 @@ const Header = () => {
               </LoginText>
             </ButtonWrapper>
             : <ButtonWrapper>
+              <LoginText title='스토리 보기' href='/stories'>
+                <LibraryBig size={24} />
+              </LoginText>
               <ButtonComponent
                 label='Login'
                 href='/login'

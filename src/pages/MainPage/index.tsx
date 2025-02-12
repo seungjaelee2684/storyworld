@@ -18,6 +18,8 @@ const MainPage = () => {
           title='Stories'
           more='/stories' />
         <CreateButton
+          title='Create a World'
+          sub='A world is a collection of stories.'
           href='/stories/upload'
           fullWidth />
       </StoryListContainer>

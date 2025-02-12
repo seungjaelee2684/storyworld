@@ -10,5 +10,7 @@ export const LoginContainer = styled.section`
 
   @media screen and (max-width: 540px) {
     width: 100%;
+    min-height: calc(100dvh - 188px);
+    margin-top: 0px;
   }
 `;

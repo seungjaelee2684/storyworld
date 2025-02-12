@@ -28,7 +28,6 @@ export const editorModules = {
       [{ size: ['small', false, 'large', 'huge'] }],
       [{ align: [] }],
       ['bold', 'italic', 'underline', 'strike'],
-      [{ font: ['serif', 'sans-serif', 'monospace'] }],
       [
         {
           color: [

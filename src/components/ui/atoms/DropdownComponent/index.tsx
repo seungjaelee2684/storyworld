@@ -5,24 +5,29 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 interface DropdownComponentProps {
     fullWidth?: boolean | undefined;
     size?: string;
+    width?: string;
     state: string;
     action: React.Dispatch<React.SetStateAction<string>>;
     options: any[];
     style?: React.CSSProperties;
+    stringify?: boolean;
 };
 
 const DropdownComponent = ({
     fullWidth,
     size = 'medium',
+    width,
     state,
     action,
     options,
     style,
+    stringify = false,
     ...props
 }: DropdownComponentProps) => {
 
     const dropdownRef = useRef<HTMLButtonElement>(null);
     const [open, setOpen] = useState<boolean>(false);
+    const [menuValue, setMenuValue] = useState<string>('선택해주세요');
 
     const openFunc = (e: any) => {
         e.preventDefault();
@@ -30,10 +35,15 @@ const DropdownComponent = ({
         setOpen(!open)
     };
 
-    const handleOpen = (e: any, item: string) => {
+    const handleOpen = (e: any, item: any) => {
         e.preventDefault();
         e.stopPropagation();
-        action(item)
+        action(item);
+        if (stringify) {
+            setMenuValue(item?.title);
+        } else {
+            setMenuValue(item?.title);
+        };
         setOpen(false);
     };
 
@@ -55,22 +65,23 @@ const DropdownComponent = ({
         <DropdownButton
             onClick={openFunc}
             $full={fullWidth}
+            $width={(width) ? width : size}
             $size={size}
             $open={open}
             style={style}
             ref={dropdownRef}
             {...props}>
-            {(state !== '') ? state : '선택해주세요'}
+            {(stringify) ? (state) ? state : '선택해주세요' : menuValue}
             {(open) ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
             {(open)
                 && <DropdownMenu
                     $size={size}>
-                    {options?.map((item: string, index: number) =>
+                    {options?.map((item: any, index: number) =>
                         <DropdownMenuButton
                             key={index}
                             $size={size}
                             onClick={(e: any) => handleOpen(e, item)}>
-                            {item}
+                            {(stringify) ? item : item?.title}
                         </DropdownMenuButton>)}
                 </DropdownMenu>}
         </DropdownButton>

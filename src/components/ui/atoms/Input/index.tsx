@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { InputContainer, InputStyle } from "./style";
+import { InputContainer, InputStyle, PasswordIcon } from "./style";
 import { Eye, EyeOff } from "lucide-react";
-import { PasswordIcon } from "../../modules/InputLane/style";
 
 interface InputProps {
   size?: string;

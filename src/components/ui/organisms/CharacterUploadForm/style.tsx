@@ -13,7 +13,7 @@ export const UploadFormContainer = styled.form`
     }
 `;
 
-export const RadioWrapper = styled.div`
+export const ImageRadioWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: start;
@@ -30,4 +30,12 @@ export const CheckboxWrapper = styled.div`
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
+`;
+
+export const InputLaneWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
 `;

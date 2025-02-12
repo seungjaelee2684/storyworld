@@ -10,6 +10,6 @@ export const MainContentContainer = styled.article`
   padding: 100px 0px;
 
   @media screen and (max-width: 1040px) {
-    padding: 80px 20px;
+    padding: 108px 20px 80px 20px;
   }
 `;
