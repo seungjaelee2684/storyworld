@@ -1,6 +1,8 @@
-import { RadioInput, RadioInputContainer, CustomRadio } from "./style";
+import { RadioInput, RadioInputContainer, CustomRadio, RadioWrapper } from "./style";
+import ImageBox from "../ImageBox";
+import { genderData } from "../../../../modules/gender";
 
-interface RadioProps {
+interface ImageRadioProps {
   text?: string;
   type?: string;
   checked?: boolean;
@@ -9,14 +11,14 @@ interface RadioProps {
   onChange?: (e: any) => void;
 };
 
-const Radio = ({
+const ImageRadio = ({
   text,
   type = 'radio',
   checked,
   name,
   value = 0,
   onChange,
-}: RadioProps) => {
+}: ImageRadioProps) => {
   return (
     <RadioInputContainer>
       <RadioInput
@@ -26,9 +28,12 @@ const Radio = ({
         checked={checked}
         onChange={onChange} />
       <CustomRadio />
-      {text}
+      <RadioWrapper>
+        <ImageBox src={genderData[value].image} alt="성별" size="large" />
+        {text}
+      </RadioWrapper>
     </RadioInputContainer>
   )
 };
 
-export default Radio;
+export default ImageRadio;

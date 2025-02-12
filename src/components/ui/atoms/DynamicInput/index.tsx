@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DynamicInputContainer, DynamicInputLabel, DynamicInputStyle } from "./style";
 import { Eye, EyeOff } from "lucide-react";
-import { PasswordIcon } from "../../modules/InputLane/style";
+import { PasswordIcon } from "../Input/style";
 
 interface DynamicInputProps {
   size?: string;
