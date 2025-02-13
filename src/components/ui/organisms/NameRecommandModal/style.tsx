@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { light_blue_black, light_blue_strong } from "../../../../styles/color_pallete";
+import { light_blue, light_blue_black, light_blue_strong } from "../../../../styles/color_pallete";
 
 export const ModalBackground = styled.div<{ $open: boolean }>`
   position: fixed;
@@ -18,7 +18,7 @@ export const ModalBackground = styled.div<{ $open: boolean }>`
   transition: all 0.2s;
 `;
 
-export const ModalContainer = styled.form<{ $open: boolean }>`
+export const ModalContainer = styled.div<{ $open: boolean }>`
   width: 600px;
   height: 700px;
   border-radius: 10px;
@@ -96,4 +96,28 @@ export const NameList = styled.ul`
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  padding: 16px 0px;
+  gap: 16px;
+`;
+
+export const NameTap = styled.li<{ $checked: boolean }>`
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 16px;
+  color: ${(props) => props.$checked ? light_blue_black : light_blue_strong};
+  background-color: ${(props) => props.$checked ? light_blue : 'transparent'};
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: ${light_blue_black};
+  }
+`;
+
+export const ModalButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 `;

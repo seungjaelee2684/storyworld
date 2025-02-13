@@ -54,7 +54,7 @@ export const LogoImage = styled.img`
   object-fit: contain;
 
   @media screen and (max-width: 1040px) {
-    width: 130px;
+    width: 140px;
   }
 `;
 
@@ -70,12 +70,37 @@ export const HeaderRightWrapper = styled.div`
   }
 `;
 
+export const SearchWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: ${light_blue};
+    padding: 0px 20px 0px 0px;
+    gap: 8px;
+  }
+`;
+
+
 export const ButtonWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+
+  @media screen and (max-width: 1040px) {
+    gap: 8px;
+  }
 `;
 
 export const LoginText = styled.a`

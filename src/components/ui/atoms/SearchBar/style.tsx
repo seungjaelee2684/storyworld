@@ -25,10 +25,7 @@ export const SearchInputContainer = styled.form<{
   @media screen and (max-width: 1040px) {
     width: 100%;
     border-radius: 0;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
+    border: none;
   }
 `;
 

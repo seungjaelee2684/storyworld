@@ -24,28 +24,30 @@ const PageTitle = ({
 }: PageTitleProps) => {
   return (
     <PageTitleContainer style={style} {...props}>
-      <PageTitleWrapper>{title}</PageTitleWrapper>
+      <PageTitleWrapper>
+        {title}
+        {(isLogin)
+          && <ObjectWrapper>
+            <ButtonComponent
+              btnType='light'
+              size='s_small'
+              href={edit}
+              icon={<Pencil size={18} />} />
+            <ButtonComponent
+              btnType='light'
+              size='s_small'
+              onClick={onRemove}
+              icon={<Trash2 size={18} />} />
+            <ButtonComponent
+              btnType='term'
+              size='s_small'
+              href={list}
+              icon={<Menu size={18} />} />
+          </ObjectWrapper>}
+      </PageTitleWrapper>
       {(sub)
         && <TitleContainer>
           <PageSubTitle>{sub}</PageSubTitle>
-          {(isLogin)
-            && <ObjectWrapper>
-              <ButtonComponent
-                btnType='light'
-                size='s_small'
-                href={edit}
-                icon={<Pencil size={18} />} />
-              <ButtonComponent
-                btnType='light'
-                size='s_small'
-                onClick={onRemove}
-                icon={<Trash2 size={18} />} />
-              <ButtonComponent
-                btnType='term'
-                size='s_small'
-                href={list}
-                icon={<Menu size={18} />} />
-            </ObjectWrapper>}
         </TitleContainer>}
     </PageTitleContainer>
   )
