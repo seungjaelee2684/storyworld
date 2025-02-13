@@ -12,7 +12,6 @@ export const PageTitleContainer = styled.div`
     user-select: none;
 
     @media screen and (max-width: 1040px) {
-        gap: 16px;
         padding: 0px;
     }
 `;
@@ -32,12 +31,15 @@ export const TitleContainer = styled.div`
 export const PageTitleWrapper = styled.h1`
     width: 100%;
     text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 36px;
     font-weight: 600;
     line-height: 100%;
 
     @media screen and (max-width: 1040px) {
-        font-size: 18px;
+        font-size: 20px;
     }
 `;
 

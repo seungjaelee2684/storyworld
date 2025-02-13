@@ -11,10 +11,12 @@ import BetweenLane from "../../components/ui/organisms/BetweenLane";
 import ToggleButton from "../../components/ui/modules/ToggleButton";
 import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
 import { PenTool } from "lucide-react";
+import { useLoginAuth } from "../../store/authStore";
 
 const StoryListPage = () => {
 
   const [isMine, setIsMine] = useState<boolean>(false);
+  const { isLogin } = useLoginAuth();
 
   const storyList = [
     { id: 1, title: '신비아이', genre: '판타지', image: Img1, writer: '유승현' },
@@ -39,7 +41,8 @@ const StoryListPage = () => {
           </ToggleButton>
         }
         second={
-          <ButtonComponent
+          (isLogin)
+          && <ButtonComponent
             icon={<PenTool size={16} />}
             label='새 스토리 추가'
             href='/stories/upload' />

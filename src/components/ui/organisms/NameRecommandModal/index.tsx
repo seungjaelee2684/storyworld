@@ -2,7 +2,7 @@ import { X } from "lucide-react";
 import ButtonComponent from "../../atoms/ButtonComponent";
 import PageTitle from "../../atoms/PageTitle";
 import InputLane from "../../modules/InputLane";
-import { CloseButton, LaneWrapper, ModalBackground, ModalContainer, NameList, NameSelect, RadioWrapper } from "./style";
+import { CloseButton, LaneWrapper, ModalBackground, ModalButtonWrapper, ModalContainer, NameList, NameSelect, NameTap, RadioWrapper } from "./style";
 import Radio from "../../atoms/Radio";
 import { handleCharacterNameRecommand } from "../../../../utils/characterNameRecommand";
 
@@ -25,7 +25,7 @@ const NameRecommandModal = ({
   ...props
 }: NameRecommandModalProps) => {
 
-  const { name_style } = state;
+  const { name, name_style } = state;
 
   const handleClickRecommandName = (e: any) => {
     e.stopPropagation();
@@ -57,7 +57,7 @@ const NameRecommandModal = ({
         <InputLane label='캐릭터의 세부 정보를 모두 입력한 후 추천 받으세요.'>
           <LaneWrapper>
             <NameSelect>
-              유형을 선택 후 추천 받기를 눌러주세요.
+              {(name?.length > 0) ? name : '유형을 선택 후 추천 받기를 눌러주세요.'}
             </NameSelect>
             <ButtonComponent label='추천 받기' onClick={handleClickRecommand} />
           </LaneWrapper>
@@ -83,9 +83,26 @@ const NameRecommandModal = ({
             onChange={handleRadioChanger} />
         </RadioWrapper>
         <NameList>
-
+          <NameTap
+            $checked={name === '실비아 드 프란체르'}
+            onClick={() => { if (action) action({ ...state, name: '실비아 드 프란체르' }) }}>
+            실비아 드 프란체르
+          </NameTap>
+          <NameTap
+            $checked={name === '하비엘'}
+            onClick={() => { if (action) action({ ...state, name: '하비엘' }) }}>
+            하비엘
+          </NameTap>
+          <NameTap
+            $checked={name === '조니악 키르딘'}
+            onClick={() => { if (action) action({ ...state, name: '조니악 키르딘' }) }}>
+            조니악 키르딘
+          </NameTap>
         </NameList>
-        <ButtonComponent label='선택 완료' />
+        <ModalButtonWrapper>
+          <ButtonComponent label='선택' onClick={onClose} />
+          <ButtonComponent label='취소' />
+        </ModalButtonWrapper>
       </ModalContainer>
     </ModalBackground>
   )

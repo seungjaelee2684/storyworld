@@ -8,10 +8,12 @@ import Chip from "../../components/ui/atoms/Chip";
 import { genderData } from "../../modules/gender";
 import ContentBox from "../../components/ui/atoms/ContentBox";
 import ImageBox from "../../components/ui/atoms/ImageBox";
+import { useLoginAuth } from "../../store/authStore";
 
 const CharacterDetailPage = () => {
 
   const { characterId } = useParams();
+  const { isLogin } = useLoginAuth();
 
   const traits = '현명한';
 
@@ -23,7 +25,7 @@ const CharacterDetailPage = () => {
         edit={`/characters/upload?character=${characterId}`}
         onRemove={() => {}}
         list={`/stories`}
-        isLogin />
+        isLogin={isLogin} />
       <FirstDetailContainer>
         <DetailContainer>
           <TitleLaneComponent title='Details' unPadding />
