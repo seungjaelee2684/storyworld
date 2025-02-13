@@ -12,11 +12,13 @@ import ButtonComponent from "../../components/ui/atoms/ButtonComponent";
 import { PenTool } from "lucide-react";
 import ContentBox from "../../components/ui/atoms/ContentBox";
 import { genderData } from "../../modules/gender";
+import { useLoginAuth } from "../../store/authStore";
 
 const StoryDetailPage = () => {
 
   const { storyId } = useParams();
   console.log("🚀 ~ StoryDetailPage ~ storyId:", storyId);
+  const { isLogin } = useLoginAuth();
 
   const episodeList = [
     { id: 1, title: '신비아이', main_character: '에드워드', image: Img1, writer: '유승현' },
@@ -42,9 +44,9 @@ const StoryDetailPage = () => {
         title='신비아이'
         sub={`판타지 • ${storyId} Episodes • ${storyId} Characters • 이승재`}
         edit={`/stories/upload?story=${storyId}`}
-        onRemove={() => {}}
+        onRemove={() => { }}
         list={`/stories`}
-        isLogin />
+        isLogin={isLogin} />
       <TitleLaneComponent title='줄거리' unPadding />
       <ContentBox>
         {`정말이니?`}
@@ -53,7 +55,8 @@ const StoryDetailPage = () => {
         title='Episodes'
         unPadding
         render={
-          <StoryButtonWrapper>
+          (isLogin)
+          && <StoryButtonWrapper>
             <ButtonComponent
               label='에피소드 추가'
               href='/episodes/upload'

@@ -5,10 +5,12 @@ import TitleLaneComponent from "../../components/ui/atoms/TitleLaneComponent";
 import CharacterCard from "../../components/ui/modules/ChracterCard";
 import { genderData } from "../../modules/gender";
 import DOMPurify from 'dompurify';
+import { useLoginAuth } from "../../store/authStore";
 
 const EpisodeDetailPage = () => {
 
   const { episodeId } = useParams();
+  const { isLogin } = useLoginAuth();
 
   const characterList = [
     { id: 1, titleName: `하비엘`, occupation: '판타지', gender: 0, },
@@ -35,7 +37,7 @@ const EpisodeDetailPage = () => {
         edit={`/episodes/upload?episode=${episodeId}`}
         onRemove={() => {}}
         list={`/stories`}
-        isLogin />
+        isLogin={isLogin} />
       <TitleLaneComponent
         title='에피소드 등장인물들'
         unPadding />
