@@ -19,6 +19,10 @@ export const CreateButtonContainer = styled.a<{
     &:hover {
         background-color: ${light_blue};
     }
+
+    @media screen and (max-width: 1040px) {
+        padding: 16px 0px;
+    }
 `;
 
 export const CreateIconBox = styled.div`
@@ -30,6 +34,12 @@ export const CreateIconBox = styled.div`
     align-items: center;
     border-radius: 8px;
     background-color: ${light_blue};
+
+    @media screen and (max-width: 1040px) {
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+    }
 `;
 
 export const TextWrapper = styled.div`
@@ -44,6 +54,10 @@ export const CreateTitle = styled.label`
     width: fit-content;
     font-size: 20px;
     font-weight: 500;
+
+    @media screen and (max-width: 1040px) {
+        font-size: 18px;
+    }
 `;
 
 export const CreateSubTitle = styled.p`
@@ -52,6 +66,10 @@ export const CreateSubTitle = styled.p`
     font-weight: 400;
     color: ${light_blue_heavy};
     text-align: start;
+
+    @media screen and (max-width: 1040px) {
+        font-size: 14px;
+    }
 `;
 
 export const RightArrow = styled.span`
