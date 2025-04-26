@@ -4,7 +4,7 @@ import PageTitle from "../../components/ui/atoms/PageTitle";
 import TitleLaneComponent from "../../components/ui/atoms/TitleLaneComponent";
 import CharacterCard from "../../components/ui/modules/ChracterCard";
 import { genderData } from "../../modules/gender";
-import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 import { useLoginAuth } from "../../store/authStore";
 
 const EpisodeDetailPage = () => {
