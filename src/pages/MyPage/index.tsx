@@ -19,6 +19,9 @@ const MyPage = () => {
         <DashboardCard
           count={0}
           label='Characters' />
+        <DashboardCard
+          count={0}
+          label='History' />
       </CountListWrapper>
       <TitleLaneComponent title='Your writing activities' unPadding />
       <CreateButtonWrapper>
@@ -36,6 +39,11 @@ const MyPage = () => {
           title='Create a character'
           sub='A character is an actor who tells your story.'
           href='/characters/upload'
+          fullWidth />
+        <CreateButton
+          title='Create your history'
+          sub='Put history on your story.'
+          href='/history/upload'
           fullWidth />
       </CreateButtonWrapper>
     </MyPageContainer>

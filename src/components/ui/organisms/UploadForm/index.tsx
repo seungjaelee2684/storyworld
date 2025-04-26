@@ -21,7 +21,7 @@ const UploadForm = ({
     onChange,
 }: UploadFormProps) => {
 
-    const { storyName, description } = state;
+    const { title, sub_title, description } = state;
     console.log(state);
 
     const optionList = genreList.map((item: any) => item.title);
@@ -40,8 +40,16 @@ const UploadForm = ({
             <InputLane label='Story Name' >
                 <Input
                     size='large'
-                    name='storyName'
-                    value={storyName}
+                    name='title'
+                    value={title}
+                    onChange={onChange}
+                    fullWidth />
+            </InputLane>
+            <InputLane label='Subheading' >
+                <Input
+                    size='large'
+                    name='sub_title'
+                    value={sub_title}
                     onChange={onChange}
                     fullWidth />
             </InputLane>

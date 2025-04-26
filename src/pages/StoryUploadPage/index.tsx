@@ -7,7 +7,8 @@ const StoryUploadPage = () => {
   const story = new URLSearchParams(window.location.search).get('story');
 
   const [upload, setUpload] = useState<any>({
-    storyName: '',
+    title: '',
+    sub_title: '',
     description: '',
     genre: '',
   });
